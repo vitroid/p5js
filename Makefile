@@ -1,4 +1,4 @@
 # deploy to github.io
 deploy:
-	cp -a * dist/
+	rsync -av --exclude="dist" * dist
 	cd dist; git add .; git commit -am '.'; git push origin gh-pages
