@@ -70,6 +70,13 @@ var ekk = []
 
 function draw(){
     for(let loop=0; loop<100; loop++){
+        // 移動
+        for(let i=0; i<N; i++){
+            x[i] += vx[i] * dt / 2
+            y[i] += vy[i] * dt / 2
+            x[i] -= floor(x[i]/width)*width
+            y[i] -= floor(y[i]/height)*height
+        }
         // 力の計算
         let fx = Array(N)
         let fy = Array(N)
@@ -87,14 +94,12 @@ function draw(){
         }
         // 移動
         for(let i=0; i<N; i++){
-            vx[i] += fx[i] / mass[i] * dt / 2
-            vy[i] += fy[i] / mass[i] * dt / 2
-            x[i] += vx[i] * dt
-            y[i] += vy[i] * dt
+            vx[i] += fx[i] / mass[i] * dt
+            vy[i] += fy[i] / mass[i] * dt
+            x[i] += vx[i] * dt / 2
+            y[i] += vy[i] * dt / 2
             x[i] -= floor(x[i]/width)*width
             y[i] -= floor(y[i]/height)*height
-            vx[i] += fx[i] / mass[i] * dt / 2
-            vy[i] += fy[i] / mass[i] * dt / 2
         }
     }
     // // エネルギー計算

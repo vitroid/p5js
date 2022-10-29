@@ -34,6 +34,11 @@ function force_LJ(x, y, x2, y2){
 }
 
 function draw(){
+    // 移動
+    x = x + vx * dt / 2
+    y = y + vy * dt / 2
+    x2 = x2 + vx2 * dt / 2
+    y2 = y2 + vy2 * dt / 2
     // 力の計算
     var f = force_LJ(x, y, mouseX, mouseY)
     fx01 = f[0]
@@ -49,18 +54,14 @@ function draw(){
     forcex2 = fx02 + fx12
     forcey2 = fy02 + fy12
     // 移動
-    vx = vx + forcex / mass * dt / 2
-    vy = vy + forcey / mass * dt / 2
-    vx2 = vx2 + forcex2 / mass * dt / 2
-    vy2 = vy2 + forcey2 / mass * dt / 2
-    x = x + vx * dt
-    y = y + vy * dt
-    x2 = x2 + vx2 * dt
-    y2 = y2 + vy2 * dt
-    vx = vx + forcex / mass * dt / 2
-    vy = vy + forcey / mass * dt / 2
-    vx2 = vx2 + forcex2 / mass * dt / 2
-    vy2 = vy2 + forcey2 / mass * dt / 2
+    vx = vx + forcex / mass * dt
+    vy = vy + forcey / mass * dt
+    vx2 = vx2 + forcex2 / mass * dt
+    vy2 = vy2 + forcey2 / mass * dt
+    x = x + vx * dt / 2
+    y = y + vy * dt / 2
+    x2 = x2 + vx2 * dt / 2
+    y2 = y2 + vy2 * dt / 2
     // 表示
     background(200)
     stroke(0)

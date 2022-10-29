@@ -1,8 +1,9 @@
 x = 100.0
 y = 100.0
-vx = 100.0
+vx = 10.0
 vy = 0.0
-mass = 3
+mass = 0.3
+mass0 = 10
 dt = 0.1
 G = 10000
 
@@ -14,8 +15,8 @@ function draw(){
     deltax = x - mouseX
     deltay = y - mouseY
     rr = deltax*deltax + deltay*deltay
-    forcex = +G * mass * deltax / rr**1.5
-    forcey = +G * mass * deltay / rr**1.5
+    forcex = +G * mass * mass0 * deltax / rr**1.5
+    forcey = +G * mass * mass0 * deltay / rr**1.5
     // 移動
     vx = vx + forcex / mass * dt
     vy = vy + forcey / mass * dt

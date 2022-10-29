@@ -12,6 +12,7 @@ function setup(){
     frameRate(30)
 }
 function draw(){
+    // 力の計算
     deltax = x - mouseX
     deltay = y - mouseY
     rr = deltax*deltax + deltay*deltay

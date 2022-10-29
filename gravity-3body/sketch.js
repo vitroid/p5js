@@ -25,6 +25,11 @@ function setup(){
 
 
 function draw(){
+    // 移動
+    x = x + vx * dt / 2
+    y = y + vy * dt / 2
+    x2 = x2 + vx2 * dt / 2
+    y2 = y2 + vy2 * dt / 2
     // 力の計算
     deltax01 = x - mouseX
     deltay01 = y - mouseY
@@ -46,18 +51,14 @@ function draw(){
     fx2 = fx12 + fx02
     fy2 = fy12 + fy02
     // 移動
-    vx = vx + fx1 / mass1 * dt / 2
-    vy = vy + fy1 / mass1 * dt / 2
-    vx2 = vx2 + fx2 / mass2 * dt / 2
-    vy2 = vy2 + fy2 / mass2 * dt / 2
-    x = x + vx * dt
-    y = y + vy * dt
-    x2 = x2 + vx2 * dt
-    y2 = y2 + vy2 * dt
-    vx = vx + fx1 / mass1 * dt / 2
-    vy = vy + fy1 / mass1 * dt / 2
-    vx2 = vx2 + fx2 / mass2 * dt / 2
-    vy2 = vy2 + fy2 / mass2 * dt / 2
+    vx = vx + fx1 / mass1 * dt
+    vy = vy + fy1 / mass1 * dt
+    vx2 = vx2 + fx2 / mass2 * dt
+    vy2 = vy2 + fy2 / mass2 * dt
+    x = x + vx * dt / 2
+    y = y + vy * dt / 2
+    x2 = x2 + vx2 * dt / 2
+    y2 = y2 + vy2 * dt / 2
     // エネルギー計算
     ep = -G*mass0*mass1/sqrt(rr01) - G*mass1*mass2/sqrt(rr12) - G*mass0*mass2/sqrt(rr02)
     ek = mass1*(vx*vx + vy*vy)/2 + mass2*(vx2*vx2 + vy2*vy2)/2
