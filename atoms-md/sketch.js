@@ -116,6 +116,8 @@ function energy_LJ(x, y, z, x2, y2, z2){
 var epp = []
 var ekk = []
 
+var visual = true
+
 function draw(){
     for(let loop=0; loop<10; loop++){
         for(let i=0; i<N; i++){
@@ -186,10 +188,10 @@ function draw(){
     for(let i=0;i<epp.length;i++){
         stroke(0,0,255,100)
         strokeWeight(5)
-        const x = (i-width/20)/10
-        line(x, 0, x, -epp[i]/10000)
+        const x = (i-width/20)*100
+        line(x, 0, x, -epp[i]/3)
         stroke(255,0,0,100)
-        line(x, 0, x, -ekk[i]/10000)
+        line(x, 0, x, -ekk[i]/3)
     }
     cam.lookAt(0,0,0)
     cam.setPosition(0,0,10000)
@@ -198,21 +200,27 @@ function draw(){
     rotateY(frameCount * 0.01);
     stroke(0)
     noFill()
-    box(cell[0])
-    noStroke()
-    // shininess(0)
-    fill(100,0,0)
-    ambientLight(100,100,100)
-    ambientMaterial(255,0,0)
-    pointLight(255,255,255,10000,-10000,10000)
-    specularMaterial(100)
-    for(let i=0; i<N; i++){
-        push()
-        x[i] -= floor(x[i]/cell[0]+0.5)*cell[0]
-        y[i] -= floor(y[i]/cell[1]+0.5)*cell[1]
-        z[i] -= floor(z[i]/cell[2]+0.5)*cell[2]
-        translate(x[i],y[i],z[i])
-        sphere(sig/2)
-        pop()
+    if (visual ){
+        box(cell[0])
+        noStroke()
+        // shininess(0)
+        fill(100,0,0)
+        ambientLight(100,100,100)
+        ambientMaterial(255,0,0)
+        pointLight(255,255,255,10000,-10000,10000)
+        specularMaterial(100)
+        for(let i=0; i<N; i++){
+            push()
+            x[i] -= floor(x[i]/cell[0]+0.5)*cell[0]
+            y[i] -= floor(y[i]/cell[1]+0.5)*cell[1]
+            z[i] -= floor(z[i]/cell[2]+0.5)*cell[2]
+            translate(x[i],y[i],z[i])
+            sphere(sig/2)
+            pop()
+        }
     }
+}
+
+function mousePressed(){
+    visual = ! visual
 }
