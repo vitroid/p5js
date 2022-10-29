@@ -23,7 +23,7 @@ function draw(){
     x = x + vx * dt
     y = y + vy * dt
     // 表示
-    background(255)
+    background(200)
     stroke(0)
     line(x,y,mouseX,mouseY)
     fill(255)
