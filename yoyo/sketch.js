@@ -11,15 +11,18 @@ function setup(){
     frameRate(30)
 }
 function draw(){
-    deltax = mouseX - x
-    deltay = mouseY - y
-    forcex = deltax * k
-    forcey = deltay * k
+    // 力の計算
+    deltax = x - mouseX
+    deltay = y - mouseY
+    forcex = -deltax * k
+    forcey = -deltay * k
+    // 移動
     vx = vx + forcex / mass * dt
     vy = vy + forcey / mass * dt
     x = x + vx * dt
     y = y + vy * dt
-    background(255)
+    // 表示
+    background(200)
     stroke(0)
     line(x,y,mouseX,mouseY)
     fill(255)

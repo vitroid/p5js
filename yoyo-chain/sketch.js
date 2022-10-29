@@ -20,27 +20,30 @@ function setup(){
     }
 }
 function draw(){
+    // 力の計算
     let forcex = Array(N)
     let forcey = Array(N)
-    deltax = mouseX - x[0]
-    deltay = mouseY - y[0]
-    forcex[0] = deltax * k[0]
-    forcey[0] = deltay * k[0]
+    deltax = x[0] - mouseX
+    deltay = y[0] - mouseY
+    forcex[0] = -deltax * k[0]
+    forcey[0] = -deltay * k[0]
     for(let i=1; i<N; i++){
-        deltax = x[i-1] - x[i]
-        deltay = y[i-1] - y[i]
-        forcex[i] = deltax * k[i]
-        forcey[i] = deltay * k[i]
-        forcex[i-1] -= deltax * k[i]
-        forcey[i-1] -= deltay * k[i]
+        deltax = x[i] - x[i-1]
+        deltay = y[i] - y[i-1]
+        forcex[i] = -deltax * k[i]
+        forcey[i] = -deltay * k[i]
+        forcex[i-1] += deltax * k[i]
+        forcey[i-1] += deltay * k[i]
     }
+    // 移動
     for(let i=0; i<N; i++){
         vx[i] += forcex[i] / mass[i] * dt
         vy[i] += forcey[i] / mass[i] * dt
         x[i] += vx[i] * dt
         y[i] += vy[i] * dt
     }
-    background(255)
+    // 表示
+    background(200)
     stroke(0)
     line(x[0],y[0],mouseX,mouseY)
     for(let i=1; i<N; i++){

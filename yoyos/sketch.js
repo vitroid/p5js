@@ -13,20 +13,24 @@ k2 = 0.1
 
 dt = 0.1
 
+var eps = []
+var eks = []
+
 function setup(){
     createCanvas(600,600)
     frameRate(30)
 }
 function draw(){
-    deltax = mouseX - x
-    deltay = mouseY - y
-    deltax2 = x - x2
-    deltay2 = y - y2
-    forcex = deltax * k - deltax2 * k2
-    forcey = deltay * k - deltay2 * k2
-    forcex2 = deltax2 * k2
-    forcey2 = deltay2 * k2
-
+    // 力の計算
+    deltax = x - mouseX
+    deltay = y - mouseY
+    deltax2 = x2 - x
+    deltay2 = y2 - y
+    forcex = -deltax * k + deltax2 * k2
+    forcey = -deltay * k + deltay2 * k2
+    forcex2 = -deltax2 * k2
+    forcey2 = -deltay2 * k2
+    // 移動
     vx = vx + forcex / mass * dt
     vy = vy + forcey / mass * dt
     vx2 = vx2 + forcex2 / mass2 * dt
@@ -35,7 +39,25 @@ function draw(){
     y = y + vy * dt
     x2 = x2 + vx2 * dt
     y2 = y2 + vy2 * dt
-    background(255)
+    // エネルギー計算
+    ep = k*(deltax*deltax + deltay*deltay)/2 + k2*(deltax2*deltax2 + deltay2*deltay2)/2
+    ek = mass*(vx*vx + vy*vy)/2 + mass2*(vx2*vx2 + vy2*vy2)/2
+    eps.push(ep)
+    eks.push(ek)
+    if (eps.length > width){
+        eps.shift(0)
+        eks.shift(0)
+    }
+    // 表示
+    background(200)
+
+    for(let i=0;i<eps.length;i++){
+        stroke(0,0,255,100)
+        line(i, height, i, height-eps[i]/100)
+        stroke(255,0,0,100)
+        line(i, height-eps[i]/100, i, height-(eps[i]+eks[i])/100)
+    }
+
     stroke(0)
     line(x,y,mouseX,mouseY)
     line(x,y,x2, y2)
