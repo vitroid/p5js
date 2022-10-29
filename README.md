@@ -1,7 +1,7 @@
 # p5js
 Samples of p5.js
 
-* [follow-mouse](https://vitroid.github.iofollow-mouse/): マウスカーソルに固定された質点の運動
+* [follow-mouse](https://vitroid.github.io/p5js/follow-mouse/): マウスカーソルに固定された質点の運動
 * [yoyo](https://vitroid.github.io/p5js/yoyo): マウスカーソルにバネでつながれた質点の運動
 * [yoyo-friction](yoyo-friction/): マウスカーソルにバネでつながれた質点の運動 (摩擦あり)
 * [yoyos](https://vitroid.github.io/p5js/yoyos): マウスカーソルにバネでつながれた2つの質点の運動 (エネルギーを表示)
