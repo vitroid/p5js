@@ -7,10 +7,11 @@ let vz = []
 const dt = 10
 const radius = 10.0
 const N=20
-let cell = [120, 120, 120]
+let cell = [120, 120, 220]
 
 function setup(){
-    createCanvas(400,400,WEBGL)
+    var canvas = createCanvas(400,400,WEBGL)
+    canvas.parent('sketch-holder')
     frameRate(30)
     normalMaterial()
     cam = createCamera()
@@ -228,13 +229,16 @@ function draw(){
 
     background(200)
     cam.lookAt(0,0,0)
-    cam.setPosition(0,0,1000)
+    cam.setPosition(0,0,400)
     setCamera(cam)
     rotateX(frameCount * 0.01);
     rotateY(frameCount * 0.01);
     stroke(0)
     noFill()
-    box(cell[0])
+    push()
+    scale(cell[0], cell[1], cell[2])
+    box(1)
+    pop()
     noStroke()
     // shininess(0)
     fill(100,0,0)

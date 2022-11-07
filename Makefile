@@ -10,4 +10,6 @@ index.md: template.md Makefile
 	sed -e 's#\[\(.*\)\]#[\1](\1/)#' $< > $@
 
 %.html: %.md
-	python -m markdown $< > $@
+	cp header.html $@
+	python mdcompiler.py < $< >> $@
+	cat footer.html >> $@

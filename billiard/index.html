@@ -2,13 +2,34 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
     <script src="sketch.js" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 </head>
 
 <body>
-    <main>
-    </main>
+    <div class="main">
+        <div id="sketch-holder">
+            <!-- Our sketch will go here! -->
+        </div>
+        <div class="text">
+<h1>Billiard</h1>
+<p>2つの円盤を自由に運動させてみます。</p>
+<p>衝突判定のしかたは[airhockey]の場合と同じですが、</p>
+<ul>
+<li>円盤と衝突してもパドルはびくともせず、円盤がはじきとばされるだけでしたが、円盤同士の衝突の場合は、運動量の交換が起こります。つまり、ぶつかった方向(2つの円盤の中心をつなぐ方向)の速度が、いれかわります。(計算を簡単にするために、すべての円盤の質量は等しいものとしています。)</li>
+<li>円盤はどちらも速度をもっているので、衝突判定の式に2つの円盤の相対速度が入ってきます。</li>
+<li>2つの円盤は勝手気ままに運動するので、どちらの円盤が先に壁に衝突するか、あるいは円盤同士の衝突が先かを、すべて計算する必要があります。コードを簡潔にするために、位置と速度を配列に格納するように変更しました。</li>
+</ul>
+<p>何度か衝突するうちに、2つの円盤は完全にランダムに運動するようになります。</p>
+</div>
+</div>
 </body>
 
 </html>

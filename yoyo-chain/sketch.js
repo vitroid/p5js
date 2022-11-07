@@ -8,7 +8,8 @@ var k = Array(N)
 dt = 0.1
 
 function setup(){
-    createCanvas(600,600)
+    var canvas = createCanvas(600,600)
+    canvas.parent('sketch-holder')
     frameRate(30)
     for(let i=0; i<N; i++){
         x[i] = 0;

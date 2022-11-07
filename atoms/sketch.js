@@ -34,7 +34,8 @@ function initialize(){
 }
 
 function setup(){
-    createCanvas(400,400)
+    var canvas = createCanvas(600,600)
+    canvas.parent('sketch-holder')
     frameRate(30)
     initialize()
 }

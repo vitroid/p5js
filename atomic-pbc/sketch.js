@@ -16,7 +16,8 @@ eps = 1000.0
 dt = 0.002
 
 function setup(){
-    createCanvas(600,600)
+    var canvas = createCanvas(600,600)
+    canvas.parent('sketch-holder')
     frameRate(30)
     mouseX = 300
     mouseY = 300

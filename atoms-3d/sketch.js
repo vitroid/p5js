@@ -43,7 +43,8 @@ function initialize(){
 }
 
 function setup(){
-    createCanvas(600,600,WEBGL)
+    var canvas = createCanvas(600,600,WEBGL)
+    canvas.parent('sketch-holder')
     frameRate(30)
     initialize()
     normalMaterial()

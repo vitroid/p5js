@@ -8,7 +8,8 @@ k = 0.1
 friction=0.1
 
 function setup(){
-    createCanvas(600,600)
+    var canvas = createCanvas(600,600)
+    canvas.parent('sketch-holder')
     frameRate(30)
 }
 function draw(){

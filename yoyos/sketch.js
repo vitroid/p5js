@@ -17,7 +17,8 @@ var eps = []
 var eks = []
 
 function setup(){
-    createCanvas(600,600)
+    var canvas = createCanvas(600,600)
+    canvas.parent('sketch-holder')
     frameRate(30)
 }
 function draw(){

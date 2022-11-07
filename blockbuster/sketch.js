@@ -6,8 +6,9 @@ const dt = 10
 const radius = 10.0
 
 function setup(){
-    createCanvas(141,100)
-    frameRate(30)
+    var canvas = createCanvas(141,100)
+    canvas.parent('sketch-holder');
+    frameRate(1)
 }
 
 const NOCOLL = -1

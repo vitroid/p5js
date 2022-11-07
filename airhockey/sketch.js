@@ -9,7 +9,8 @@ let px
 let py
 
 function setup(){
-    createCanvas(141,100)
+    var canvas = createCanvas(141,100)
+    canvas.parent('sketch-holder');
     frameRate(30)
 }
 
@@ -74,7 +75,7 @@ function progress(dt, last)
         let dy = y - py
         let A = vx**2 + vy**2
         let B = 2*(vx*dx + vy*dy)
-        let C = dx**2 + dy**2 - 4*radius**2
+        let C = dx**2 + dy**2 - (2*radius)**2
         let D = B**2 - 4*A*C
         if ( D > 0 ){
             let t_paddle = (-B-Math.sqrt(D))/(2*A)
@@ -107,6 +108,7 @@ function progress(dt, last)
             // paddleとの衝突。
             // t_collだけ進んだので、球とパドルは距離2rの位置にある。
             // 2者をつなぐベクトルの方向の速度成分を反転させる。
+            // (dx, dy)は2つの球の相対位置方向の単位ベクトル。
             let dx = (px - x) / (2*radius)
             let dy = (py - y) / (2*radius)
             // 速度の法線成分
