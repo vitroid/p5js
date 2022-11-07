@@ -7,7 +7,6 @@ const Rgas = Navogadro*Kboltzmann // J / mol / K
 // Variables for UI
 let sig = 0.363*1000 // pm
 let eps = 231 // Kelvin
-// debug
 let Temperature = 200 // K, 温度制御しない時は0に設定
 let Density = 0.15 // g/cm3
 
