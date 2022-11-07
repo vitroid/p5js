@@ -2,13 +2,47 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+    <script src="mdlj.js" type="text/javascript"></script>
     <script src="sketch.js" type="text/javascript"></script>
 </head>
 
 <body>
-    <main>
-    </main>
+    <h1>Molecular Dynamics of Lennard-Jones particles</h1>
+    <div class="main">
+        <div class=""left">
+            <div>
+                Sigma <span id="sigma"></span>
+                Epsilon/kB <span id="epsilon"></span>
+            </div>
+            <div>
+                Sigma [pm] <input id="idsig" type="text" onchange="changeS()" />
+            </div>
+            <div>
+                Epsilon/k<sub>B</sub> [K] <input id="ideps" type="text" onchange="changeE()" />
+            </div>
+            <div>
+                Density [g/cm<sup>3</sup>] <input id="iddensity" type="text" onchange="changeD()" />
+            </div>
+            <div>
+                Temperature [K]<input id="idtemperature" type="text" onchange="changeT()" />
+            </div>
+            <div>
+                <input id="startButton" type="button" onclick="startStop()" value="Start" disabled="true" />
+            </div>
+            <div>
+                <textarea id="output"></textarea>
+            </div>
+            <div>
+                Reload the page if you want to force a restart.
+            </div>
+        </div>
+        <div id="sketch-holder">
+            <!-- Our sketch will go here! -->
+        </div>
+</div>
 </body>
+<script src="ui.js" type="text/javascript"></script>
 
 </html>
