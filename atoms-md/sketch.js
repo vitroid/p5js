@@ -1,5 +1,5 @@
 var visual = true
-var mdlj = new MDLJ(363, 231, 0.15, 200)
+var mdlj = new MDLJ(231, 363, 0.15, 200)
 
 function setup(){
     var canvas = createCanvas(600,600,WEBGL)
@@ -16,9 +16,9 @@ function draw(){
     // 表示
     background(200)
     // console.log(mdlj.epp)
+    strokeWeight(5)
     for(let i=0; i<mdlj.epp.length;i++){
         stroke(0,0,255,100)
-        strokeWeight(5)
         const x = (i-width/20)*100
         line(x, 0, x, -mdlj.epp[i]/5)
         stroke(255,0,0,100)

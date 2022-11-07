@@ -223,11 +223,30 @@ class MDLJ {
 
     thermostat(Ttarget)
     {
+        // ドリフトの解消
+        let dr = new Array(3)
+        for(let i=0;i<3;i++){
+            dr[i] = 0;
+        }
+        for(let i=0; i<this.N; i++){
+            dr[0] += this.vx[i]
+            dr[1] += this.vy[i]
+            dr[2] += this.vz[i]
+        }
+        dr[0] /= this.N
+        dr[1] /= this.N
+        dr[2] /= this.N
+        for(let i=0; i<this.N; i++){
+            this.vx[i] -= dr[0]
+            this.vy[i] -= dr[1]
+            this.vz[i] -= dr[2]
+        }
         // 温度制御
         var ratio = ( this.ek > 3/2 * Ttarget * Rgas )? 0.99 : 1.01
         for(let i=0; i<this.N; i++){
             this.vx[i] *= ratio
             this.vy[i] *= ratio
+            this.vz[i] *= ratio
         }
     }
 
