@@ -10,7 +10,7 @@ README.md: template.md Makefile
 	sed -e 's#\[\(.*\)\]#[\1](https://vitroid.github.io/p5js/\1/)#' $< > $@
 
 index.md: template.md Makefile
-	sed -e 's#\[\(.*\)\]#[\1](\1/)#' $< > $@
+	sed -e 's#\[\(.*\)\]\([^(]\)#[\1](\1/)\2#' $< > $@
 
 %.html: %.md
 	cp header.html $@
