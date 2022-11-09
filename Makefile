@@ -1,5 +1,5 @@
 all: index.html
-	for d in `ls -d */`; do make -C $$d ; done
+	for d in `ls -d */ | grep -v dist | grep -v git`; do echo $$d; make -C $$d ; done
 
 # deploy to github.io
 deploy:

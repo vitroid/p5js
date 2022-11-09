@@ -1,2 +1,2 @@
-PREV=atoms-3d
+PREV=yoyo-friction
 include ../Makefile.children
