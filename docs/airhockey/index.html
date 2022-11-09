@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+    <script src="sketch.js" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div id="sketch-holder">
+            <!-- Our sketch will go here! -->
+        </div>
+        <div class="text">
+<h1>Air hockey</h1>
+<p>壁とぶつかるだけの運動は眠気をさそうので、ちょっとちょっかいをだしてみます。</p>
+<p>マウスポインタの位置にも、剛体円盤(パドル)を表示するようにしました。円盤同士が衝突する場合は、壁の場合よりも複雑な計算が必要になります。</p>
+<ol>
+<li>円盤と円盤の間の距離が、円盤の直径と等しくなる時に、衝突が起こります。現在、動いているほうの円盤は$(x,y)$にいて、速度$(v_x, v_y)$を持っています。もう一方の、マウスポインタの位置$(p_x, p_y)$の円盤は静止しているものとします。</li>
+<li>時間が$dt$経つと、前者の円盤の位置は$(x+v_x\cdot dt, y+v_y\cdot dt)$に進みます。この時に、円盤同士が衝突するものとしましょう。すると、衝突の条件は次の式で表せます。
+    $$ |x+v_x\cdot dt - p_x, y+v_y\cdot dt - p_y| = 2r $$</li>
+<li>$dt$以外の数値は既知なので、これを満足する$dt$は、二次方程式を解くことで求められます。二次方程式が根を持たない場合は、2つの球はすれちがって衝突しないことを意味します。また、二次方程式は2つの根を持ちますが、最初の衝突までの時間が知りたいので、小さいほうの根を採用します。</li>
+</ol>
+<p>なお、パドルの速度は計算に入れていないので、マウスを動かしても、円盤の速度を変えることはできません。いつも完全弾性衝突しているので、速度は一定です。</p>
+<h2>改造してみよう</h2>
+<p>パドルの直径を2倍にしてみます。パドルの直径が円盤の直径の2倍になると、円盤とパドルの衝突は、円盤の半径の3倍の場所で起こります。上の式で言えば、$2r$の部分を$3r$に変更するだけです。プログラム内では、次の部分に書かれています。</p>
+<pre class="codehilite"><code>        let C = dx**2 + dy**2 - (2*radius)**2
+</code></pre>
+
+<p>衝突後の速度を計算する部分にも修正が必要です。</p>
+<pre class="codehilite"><code class="language-javascript">let dx = (px - x) / (2*radius)
+let dy = (py - y) / (2*radius)
+</code></pre>
+
+<p>パドルは以下の部分で表示しています。ここでも、倍のサイズで描くようにします。</p>
+<pre class="codehilite"><code>    ellipse(px,py,radius*2,radius*2)
+</code></pre>
+</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+    <script src="sketch.js" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div id="sketch-holder">
+            <!-- Our sketch will go here! -->
+        </div>
+        <div class="text">
+<h2>Atoms in a periodic world</h2>
+<p>物体が飛び去ってしまうのを防ぐために、箱のなかにとじこめる工夫はこれまでも[gravity-box]や[blocbuster]でおこないました。ここでは、分子シミュレーションでよく利用される、別のタイプの箱を紹介します。</p>
+<h2>周期境界条件</h2>
+<p>周期境界条件とは、箱の右端と左端、上端と下端がそれぞれつながっているような箱の状態を表します。現実にはそんな条件が実現されることはなかなかありませんが、壁の影響を完全に排除できるので、分子シミュレーションではほぼ必ず使用されます。</p>
+<p>左のウィンドウでは、実際にシミュレーションしているのは中央のセル内の分子だけで、周囲の8セルの内容はただのコピーです。</p>
+<p>周期境界条件のもとでは、分子はそのセルまたは隣のセルのなかで、最も近い分子と相互作用します。物体Aは、物体Bとそのコピーの9つのなかで最も近くにあるものと相互作用します。(わかりやすいように、力の働く方向に線を引いてあります。)</p>
+</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+    <script src="sketch.js" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div id="sketch-holder">
+            <!-- Our sketch will go here! -->
+        </div>
+        <div class="text">
+<h1>Follow mouse</h1>
+<p>マウスポインタの位置に〇を描くだけの10行ほどの短いプログラムです。</p>
+<p>ざっくりと説明します。</p>
+<h2>setup</h2>
+<p>関数<code>setup()</code>には、初期設定を書いておきます。この関数は、アニメーションをはじめる前に、一度だけ実行されます。</p>
+<pre class="codehilite"><code>function setup(){
+    var canvas = createCanvas(600,600)
+    canvas.parent('sketch-holder')
+    frameRate(30)
+}
+</code></pre>
+
+<p>1行目で幅600ピクセル、高さ600ピクセルのcanvas(絵を描くスペース)を準備します。</p>
+<p>2行目で、それをウェブページの'sketch-holder'という場所に割りつけます。</p>
+<p>3行目で、アニメーションを毎秒30コマで再生することを指示しています。(テレビのコマ数と同じです。)</p>
+<h2>draw</h2>
+<p>関数<code>draw()</code>は、1コマ1コマの描き方を指示する関数です。この関数は、毎秒30回呼びだされます。</p>
+<pre class="codehilite"><code>function draw(){
+    // 表示
+    background(200)
+    stroke(0)
+    fill(255)
+    ellipse(mouseX,mouseY,20,20)
+}
+</code></pre>
+
+<p><code>//</code>以降はコメントとみなされ、無視されます。プログラム内に覚えがきを残しておくと、読みやすくなります。</p>
+<p>2行目で、背景色を明るさ200/255の淡いグレーにしています。カラーにしたい場合は、赤、緑、青の3原色の強さをそれぞれ0〜255で指定します。<code>background()</code>を省略すると、次のコマを描く時に前のコマの絵を消さないので、どんどん重ね描きされます。</p>
+<p>3行目で、線の色を黒に指定しています。</p>
+<p>4行目で、塗り色を白に指定しています。</p>
+<p>5行目で、マウスの位置に幅20ピクセル、高さ20ピクセルの楕円(円)を描いています。</p>
+<h2>改造してみよう</h2>
+<ol>
+<li>
+<p>背景色の指定をなくしてみて下さい。</p>
+</li>
+<li>
+<p>円の塗り色が、時間変化するようにして下さい。変数<code>frameCount</code>には、今描いているコマ数が自動的に設定されています。これを使って、赤緑青の強度を次のように設定します。</p>
+</li>
+</ol>
+<pre class="codehilite"><code>let R = (frameCount*2) % 256
+let G = (frameCount*3) % 256
+let B = (frameCount*5) % 256
+fill(R,G,B)
+</code></pre>
+</div>
+</div>
+</body>
+
+</html>
