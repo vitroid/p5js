@@ -1,4 +1,4 @@
-all: index.html
+all: index.html README.md
 	for d in `ls -d */ | grep -v dist | grep -v git`; do echo $$d; make -C $$d ; done
 
 # deploy to github.io
