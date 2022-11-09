@@ -1,3 +1,6 @@
+all: index.html
+	for d in `ls -d */`; do make -C $$d ; done
+
 # deploy to github.io
 deploy:
 	rsync -av --exclude="dist" * dist
