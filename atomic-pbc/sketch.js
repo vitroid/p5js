@@ -126,18 +126,18 @@ function draw(){
     // ポテンシャルエネルギーの表示
     stroke(0,0,255,100)
     for(let i=0;i<epp.length;i++){
-        line(i, height/2, i, height/2-epp[i]/30)
+        line(i, height/2, i, height/2-epp[i]/100)
     }
     // 運動エネルギーの表示
     stroke(255,0,0,100)
     for(let i=0;i<epp.length;i++){
-        line(i, height/2, i, height/2-ekk[i]/30)
+        line(i, height/2, i, height/2-ekk[i]/100)
     }
     // 全エネルギーの表示
     noStroke()
     fill(0)
     for(let i=0;i<epp.length;i++){
-        ellipse(i, height/2 - (epp[i]+ekk[i])/30,2,2)
+        ellipse(i, height/2 - (epp[i]+ekk[i])/100,2,2)
     }
     stroke(0)
     push()

@@ -25,6 +25,9 @@ Samples of [p5.js](https://p5js.org).
 * [atoms-3d](atoms-3d/): 三次元多分子のシミュレーション
 * [atoms-md](atoms-md/): Lennard-Jonesの分子動力学シミュレーション
 
+## その他
+
+* [energy-levels](energy-levels/): ボルツマン分布
 ## Repository
 
 * [GitHub/vitroid/p5js](https://github.com/vitroid/p5js)
