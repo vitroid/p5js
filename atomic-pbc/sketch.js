@@ -140,11 +140,62 @@ function draw(){
         ellipse(i, height/2 - (epp[i]+ekk[i])/30,2,2)
     }
     stroke(0)
-    line(x,y,mouseX,mouseY)
-    line(x2,y2,mouseX,mouseY)
-    line(x,y,x2, y2)
+    push()
+    scale(1/3)
+    translate(width,height)
+    line(0,-height, 0, height*2)
+    line(width,-height, width, height*2)
+    line(-width,0, width*2, 0)
+    line(-width,height, width*2, height)
     fill(255)
-    ellipse(mouseX,mouseY,50,50)
-    ellipse(x,y,50,50)
-    ellipse(x2,y2,50,50)
+    for (let cx=-1; cx<=1; cx++){
+        for (let cy=-1; cy<=1; cy++){
+            push()
+            translate(cx*width, cy*height)
+            let dx=mouseX-x
+            let dy=mouseY-y
+            if ( dx >= width/2 ){
+                dx -= width
+            }else if ( dx < -width/2 ){
+                dx += width
+            }
+            if ( dy >= height/2 ){
+                dy -= height
+            }else if ( dy < -height/2 ){
+                dy += height
+            }
+            line(x,y,x+dx,y+dy)
+            dx=mouseX-x2
+            dy=mouseY-y2
+            if ( dx >= width/2 ){
+                dx -= width
+            }else if ( dx < -width/2 ){
+                dx += width
+            }
+            if ( dy >= height/2 ){
+                dy -= height
+            }else if ( dy < -height/2 ){
+                dy += height
+            }
+            line(x2,y2,x2+dx,y2+dy)
+            dx=x2-x
+            dy=y2-y
+            if ( dx >= width/2 ){
+                dx -= width
+            }else if ( dx < -width/2 ){
+                dx += width
+            }
+            if ( dy >= height/2 ){
+                dy -= height
+            }else if ( dy < -height/2 ){
+                dy += height
+            }
+            line(x,y,x+dx,y+dy)
+            ellipse(mouseX,mouseY,50,50)
+            ellipse(x,y,50,50)
+            ellipse(x2,y2,50,50)
+            pop()
+        }
+    }
+    pop()
 }
