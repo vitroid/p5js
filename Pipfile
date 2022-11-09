@@ -8,6 +8,7 @@ markdown = "*"
 mistune = "*"
 
 [dev-packages]
+matplotlib = "*"
 
 [requires]
 python_version = "3.9"

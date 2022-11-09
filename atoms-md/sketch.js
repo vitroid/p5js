@@ -2,7 +2,7 @@ var visual = true
 var mdlj = new MDLJ(231, 363, 0.15, 200)
 
 function setup(){
-    var canvas = createCanvas(600,600,WEBGL)
+    var canvas = createCanvas(400,400,WEBGL)
     canvas.parent('sketch-holder');
     normalMaterial()
     cam = createCamera()
@@ -19,7 +19,7 @@ function draw(){
     strokeWeight(5)
     for(let i=0; i<mdlj.epp.length;i++){
         stroke(0,0,255,100)
-        const x = (i-width/20)*100
+        const x = (i-mdlj.epp.length/2) * 100
         line(x, 0, x, -mdlj.epp[i]/5)
         stroke(255,0,0,100)
         line(x, 0, x, -mdlj.ekk[i]/5)
@@ -32,7 +32,10 @@ function draw(){
     stroke(0)
     noFill()
     if (visual ){
-        box(mdlj.cell[0])
+        push()
+        scale(mdlj.cell[0], mdlj.cell[1], mdlj.cell[2])
+        box(1)
+        pop()
         noStroke()
         // shininess(0)
         fill(100,0,0)

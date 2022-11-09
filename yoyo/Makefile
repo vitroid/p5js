@@ -1,3 +1,2 @@
-PREV=follow-mouse
-diff:
-	diff -yb ../$(PREV)/sketch.js sketch.js
+PREV=foloow-mouse
+include ../Makefile.children

@@ -59,7 +59,7 @@ class MDLJ {
 
         this.numdens = this.densr * 1e-3/this.mass * Navogadro / 1e30 // 数密度、個/pm3
 
-        const NCL=3
+        const NCL=4
         this.N=4*NCL**3
         const volume = this.N/this.numdens  // pm3
         const L = volume**(1/3)
@@ -73,9 +73,9 @@ class MDLJ {
             this.x[i] *= this.cell[0]
             this.y[i] *= this.cell[1]
             this.z[i] *= this.cell[2]
-            this.vx[i] = Math.random()*100 - 50
-            this.vy[i] = Math.random()*100 - 50
-            this.vz[i] = Math.random()*100 - 50
+            this.vx[i] = Math.random()*500 - 250
+            this.vy[i] = Math.random()*500 - 250
+            this.vz[i] = Math.random()*500 - 250
         }
 
         // for the bar graph

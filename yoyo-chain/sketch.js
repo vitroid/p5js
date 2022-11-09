@@ -1,11 +1,12 @@
 const N=10
+const dt = 0.1
+
 var x = Array(N)
 var y = Array(N)
 var vx = Array(N)
 var vy = Array(N)
 var mass = Array(N)
 var k = Array(N)
-dt = 0.1
 
 function setup(){
     var canvas = createCanvas(600,600)

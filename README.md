@@ -1,5 +1,5 @@
 # p5js
-Samples of p5.js
+Samples of [p5.js](https://p5js.org)
 
 ## 剛体球の力学
 * [blockbuster](https://vitroid.github.io/p5js/blockbuster/): 壁に衝突する剛体円盤
@@ -12,6 +12,7 @@ Samples of p5.js
 * [follow-mouse](https://vitroid.github.io/p5js/follow-mouse/): マウスカーソルに固定された質点の運動
 * [yoyo](https://vitroid.github.io/p5js/yoyo/): マウスカーソルにバネでつながれた質点の運動
 * [yoyo-friction](https://vitroid.github.io/p5js/yoyo-friction/): マウスカーソルにバネでつながれた質点の運動 (摩擦あり)
+* [yoyo-string](https://vitroid.github.io/p5js/yoyo-string/): マウスカーソルにひもでつながれた質点の運動 (摩擦なし)
 * [yoyos](https://vitroid.github.io/p5js/yoyos/): マウスカーソルにバネでつながれた2つの質点の運動 (エネルギーを表示)
 * [yoyo-chain](https://vitroid.github.io/p5js/yoyo-chain/): 質点の数珠つなぎ
 * [gravity](https://vitroid.github.io/p5js/gravity/): バネ相互作用の代わりに重力でひっぱられるヨーヨー

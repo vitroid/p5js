@@ -1,31 +1,30 @@
-sig = 50
-sig2 = sig*sig
-sig6 = sig2*sig2*sig2
-sig12 = sig6*sig6
-eps = 100.0
+const sig = 50
+const eps = 100.0
+const dt = 0.003
+const N = 20
+const T = 50
 
-dt = 0.001
-
-const N=20
-var x = Array(N)
-var y = Array(N)
-var vx = Array(N)
-var vy = Array(N)
-var mass = Array(N)
+let x = Array(N)
+let y = Array(N)
+let vx = Array(N)
+let vy = Array(N)
+let mass = Array(N)
 
 
-function initialize(){
-    var X = 1
-    var row = 0
-    var Y = row*52 + 25
+function arrange_atoms(){
+    let X = 1
+    let row = 0
+    let xspacing = sig*1.02
+    let yspacing = xspacing*Math.sqrt(3)/2
+    let Y = sig*0.02
     for(let i=0; i<N; i++){
         x[i] = X
         y[i] = Y
-        X += 52
-        if ( X > width - 55 ){
+        X += xspacing
+        if ( X > width ){
             row += 1
-            X = (row % 2)*27 + 1
-            Y = row*52 + 25
+            X = (row % 2)*xspacing/2
+            Y += yspacing
         }
         vx[i] = 0
         vy[i] = random()*100 - 50
@@ -34,22 +33,28 @@ function initialize(){
 }
 
 function setup(){
-    var canvas = createCanvas(600,600)
+    let canvas = createCanvas(600,600)
     canvas.parent('sketch-holder')
     frameRate(30)
-    initialize()
+    arrange_atoms()
 }
 
 
 function force_LJ(x, y, x2, y2){
     let dx = x2 - x
     let dy = y2 - y
-    dx -= floor(dx/width+0.5)*width
-    dy -= floor(dy/height+0.5)*height
-    let d2 = dx*dx + dy*dy
-    let d6 = d2*d2*d2
-    let d12 = d6*d6
-    let f = 4*eps*(-12*sig12/d12+6*sig6/d6)/d2
+    if ( dx >= width/2 ){
+        dx -= width
+    }else if ( dx < -width/2 ){
+        dx += width
+    }
+    if ( dy >= height/2 ){
+        dy -= height
+    }else if ( dy < -height/2 ){
+        dy += height
+    }
+    let d2 = dx**2 + dy**2
+    let f = 4*eps*(-12*sig**12/d2**6+6*sig**6/d2**3)/d2
     return [f*dx, f*dy]
 }
 
@@ -57,17 +62,23 @@ function force_LJ(x, y, x2, y2){
 function energy_LJ(x, y, x2, y2){
     let dx = x2 - x
     let dy = y2 - y
-    dx -= floor(dx/width+0.5)*width
-    dy -= floor(dy/height+0.5)*height
-    let d2 = dx*dx + dy*dy
-    let d6 = d2*d2*d2
-    let d12 = d6*d6
-    return 4*eps*(sig12/d12-sig6/d6)
+    if ( dx >= width/2 ){
+        dx -= width
+    }else if ( dx < -width/2 ){
+        dx += width
+    }
+    if ( dy >= height/2 ){
+        dy -= height
+    }else if ( dy < -height/2 ){
+        dy += height
+    }
+    let d2 = dx**2 + dy**2
+    return 4*eps*(sig**12/d2**6-sig**6/d2**3)
 }
 
 
-var epp = []
-var ekk = []
+let epp = []
+let ekk = []
 
 function draw(){
     for(let loop=0; loop<100; loop++){
@@ -75,8 +86,6 @@ function draw(){
         for(let i=0; i<N; i++){
             x[i] += vx[i] * dt / 2
             y[i] += vy[i] * dt / 2
-            x[i] -= floor(x[i]/width)*width
-            y[i] -= floor(y[i]/height)*height
         }
         // 力の計算
         let fx = Array(N)
@@ -99,18 +108,26 @@ function draw(){
             vy[i] += fy[i] / mass[i] * dt
             x[i] += vx[i] * dt / 2
             y[i] += vy[i] * dt / 2
-            x[i] -= floor(x[i]/width)*width
-            y[i] -= floor(y[i]/height)*height
+            if ( x[i] >= width ){
+                x[i] -= width
+            }else if ( x[i] < 0 ){
+                x[i] += width
+            }
+            if ( y[i] >= height ){
+                y[i] -= height
+            }else if ( y[i] < 0 ){
+                y[i] += height
+            }
         }
     }
     // // エネルギー計算
-    var ep = 0
+    let ep = 0
     for(let i=0; i<N; i++){
         for(let j=0; j<i; j++){
             ep += energy_LJ(x[i],y[i],x[j],y[j])
         }
     }
-    var ek = 0
+    let ek = 0
     for(let i=0; i<N; i++){
         ek += mass[i]*(vx[i]**2 + vy[i]**2)/2
     }
@@ -121,7 +138,7 @@ function draw(){
         ekk.shift(0)
     }
     // 温度制御
-    if ( ek > 50 * N ){
+    if ( ek/N > T ){
         for(let i=0; i<N; i++){
             vx[i] *= 0.99
             vy[i] *= 0.99
@@ -129,11 +146,21 @@ function draw(){
     }
     // 表示
     background(200)
+    // ポテンシャルエネルギーの表示
+    stroke(0,0,255,100)
     for(let i=0;i<epp.length;i++){
-        stroke(0,0,255,100)
-        line(i, height/2, i, height/2-epp[i]/100)
-        stroke(255,0,0,100)
-        line(i, height/2, i, height/2-ekk[i]/100)
+        line(i, height/2, i, height/2-epp[i]/30)
+    }
+    // 運動エネルギーの表示
+    stroke(255,0,0,100)
+    for(let i=0;i<epp.length;i++){
+        line(i, height/2, i, height/2-ekk[i]/30)
+    }
+    // 全エネルギーの表示
+    noStroke()
+    fill(0)
+    for(let i=0;i<epp.length;i++){
+        ellipse(i, height/2 - (epp[i]+ekk[i])/30,2,2)
     }
     stroke(0)
     fill(255)

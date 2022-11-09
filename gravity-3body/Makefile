@@ -1,3 +1,2 @@
-PREV=antigravity
-diff:
-	diff -yb ../$(PREV)/sketch.js sketch.js
+PREV=gravity
+include ../Makefile.children

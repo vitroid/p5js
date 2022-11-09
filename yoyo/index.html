@@ -5,17 +5,96 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
     <script src="sketch.js" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 </head>
 
 <body>
-    <h1></h1>
     <div class="main">
         <div id="sketch-holder">
             <!-- Our sketch will go here! -->
         </div>
         <div class="text">
-        </div>
-    </div>
+<h1>Yo-yo</h1>
+<p>お祭りの屋台で風船釣りで遊んだことはありますか? 重い物体がマウスポインタの先にゴムでつながっている状況をシミュレーションで再現してみます。</p>
+<h2>運動方程式</h2>
+<p>何も力が加わっていない物体は等速直進運動しますが、力$F$が加わると、物体は力の方向に加速されます。加速されにくさは<em>質量</em>$m$で表されます。加速度を$a$とすると、</p>
+<p>(1)$$F=ma$$
+これが力学の最も基本的な式、運動方程式です。</p>
+<p>加速度はその名の通り、速度が毎秒どれぐらい増加するかをあらわす量で、式で書くなら次のようになります。</p>
+<p>(2)$$a={\mathrm dv\over \mathrm dt}$$
+例えば、秒速10 mで走っている車の速度が、1秒後に秒速12 mになったら、その間の平均加速度は、速度の増分(2 m/s)を時間(1 s)で割って、$a=2\textrm{ m/s/s}$、あるいは$2 \textrm { m s}^{-2} $
+となります。</p>
+<p>(3)$$a\simeq{\Delta v\over \Delta t}$$
+右辺の分母を左辺に移すと、速度の差分の式が得られます。</p>
+<p>(4)$$v(t+\Delta t)=v(t)+a\Delta t$$
+この式は、右辺に現在の速度と加速度、左辺には$\Delta t$だけ未来の速度が書かれています。つまり、現在の速度と加速度がわかれば、すこし未来の速度が計算できる、ということです。</p>
+<p>さらに、速度$v$と物体の位置$r$の間にも次のような関係があります。</p>
+<p>(5)$$v={\mathrm dr\over \mathrm dt}$$
+例えば、5秒間に物体が20 m移動したなら、その間の速度は20/5=4 m/sです。こちらの関係はもっと身近ですね。</p>
+<p>加速度の式と速度の式は全く同じ形をしているので、これも差分の式に書きかえましょう。</p>
+<p>(6)$$r(t+\Delta t)=r(t)+v\Delta t$$
+これで、すこし未来の物体の位置がわかりました。</p>
+<p>物体の位置が変わると、力が変わります。その位置での力を求め、(2)式で加速度を求め、以下同様に計算を繰りかえすことで、つぎつぎに未来の物体の位置を予測することができます。</p>
+<h2>力</h2>
+<p>バネやゴムの生みだす力は、近似的にバネの伸びに比例します。伸びを$d$とすれば、</p>
+<p>(7)$$F=-k d$$
+と書けます。この比例定数$k$のことをバネ定数と言います。バネ定数が大きいバネは固いバネです。マイナスがついているのは、バネが伸びるほど、それを戻す方向の力が増える、という意味です。</p>
+<p>今、マウスポインタと物体の間の距離を$x$とすれば、(7)式で力$F$が計算できます。(バネ定数$k$は事前に与えておきます。)</p>
+<p>力はマウスポインタにも物体にも同じ大きさで働きますが、マウスポインタはあなたがおさえていて動きませんから、動くのは物体だけです。物体の運動は(2)〜(6)式で計算します。式を見てわかる通り、かけ算と足し算しかでてこない、単純な式ばかりなので、手で計算することもできるかもしれません。</p>
+<h2>ベクトル</h2>
+<p>マウスポインタは二次元空間である画面の中を動くので、二次元の運動を考える必要があります。二次元の場合、$F,v,r,d$などはすべてベクトルであらわさなければなりません。例えば、速度を表すのに、速さだけでは不十分で、どちら向きに走っているのかを示す必要があります。</p>
+<p>2次元のベクトルは、$x$方向と$y$方向(互いに直交している、例えば東西と南北)の2つの成分で表されます。例えば、ある物体が東向きに毎秒3 m、北向きに毎秒4 mで進んでいれば、その速さは5 m/sです。これをベクトルで表すなら、</p>
+<p>(8)
+$$\mathbf{v}=(3,4)$$
+となります。(ベクトルは太字で表すことにしましょう。)</p>
+<p><img alt="illustration of a vector" src="https://sci-pursuit.com/images/math/meaning-of-vector/meaning-of-vector_1-3.svg" /></p>
+<blockquote>
+<p><a href="https://sci-pursuit.com/math/meaning-of-vector.html">https://sci-pursuit.com/math/meaning-of-vector.html</a>より引用</p>
+</blockquote>
+<p>ベクトルは速度だけでなく、位置や、相対位置を表わすのにも使える便利な表現方法です。</p>
+<p>上ででてきた運動方程式やバネの方程式は、そのまま自然にベクトルの式におきかえることができます。</p>
+<p>(7')$$\mathbf F=-k \mathbf d$$</p>
+<p>(1')$$\mathbf a=\mathbf F/m$$</p>
+<p>(4')$$\mathbf v(t+\Delta t)=\mathbf v(t)+\mathbf a\Delta t$$</p>
+<p>(6')$$\mathbf r(t+\Delta t)=\mathbf r(t)+\mathbf v\Delta t$$</p>
+<p>そして、実際に計算するときには、$x$成分と$y$成分は別々に計算します。</p>
+<p>(7'')
+$$F_x=-k d_x$$
+$$F_y=-k d_y$$</p>
+<p>(1'')
+$$a_x=F_x/m$$
+$$a_y=F_y/m$$</p>
+<p>(4'')
+$$v_x(t+\Delta t)=v_x(t)+a_x\Delta t$$
+$$v_y(t+\Delta t)=v_y(t)+a_y\Delta t$$</p>
+<p>(6'')
+$$r_x(t+\Delta t)=r_x(t)+v\Delta t$$
+$$r_y(t+\Delta t)=r_y(t)+v\Delta t$$</p>
+<p>式の個数が倍になるだけです。簡単ですね。</p>
+<p>(7'')式にでてくる$d_x, d_y$は、マウスポインタの位置$(p_x, p_y)$と物体の位置$(r_x, r_y)$の相対位置です。式で書くなら、</p>
+<p>(9)$$\mathbf d=\mathbf r-\mathbf p$$</p>
+<p>成分できちんと表すなら、</p>
+<p>(9')
+$$d_x=r_x-p_x$$
+$$d_y=r_y-p_y$$</p>
+<p>と書けます。プログラム内では、マウスポインタの座標は<code>mouseX, mouseY</code>に入っていますので、これを使って相対位置<code>deltax, deltay</code>を求めています。</p>
+<h2>改造してみよう</h2>
+<ol>
+<li>
+<p>物体の質量を大きくしてみて下さい。</p>
+</li>
+<li>
+<p>バネ定数を大きくしてみて下さい。</p>
+</li>
+</ol>
+<p>あまり極端な数値にすると、計算が破綻してしまう可能性があります。</p>
+</div>
+</div>
 </body>
 
 </html>

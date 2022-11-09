@@ -1,10 +1,11 @@
-x = 0.0
-y = 0.0
-vx = 0.0
-vy = 0.0
-mass = 0.3
-dt = 0.1
-k = 0.1
+const mass = 0.3
+const dt = 0.1
+const k = 0.1
+
+let x = 0.0
+let y = 0.0
+let vx = 0.0
+let vy = 0.0
 
 function setup(){
     var canvas = createCanvas(600,600)
@@ -13,10 +14,10 @@ function setup(){
 }
 function draw(){
     // 力の計算
-    deltax = x - mouseX
-    deltay = y - mouseY
-    forcex = -deltax * k
-    forcey = -deltay * k
+    let deltax = x - mouseX
+    let deltay = y - mouseY
+    let forcex = -deltax * k
+    let forcey = -deltay * k
     // 移動
     vx = vx + forcex / mass * dt
     vy = vy + forcey / mass * dt
