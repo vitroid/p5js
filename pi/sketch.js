@@ -60,3 +60,9 @@ function draw(){
         noLoop()
     }
 }
+
+function windowResized() {
+    let newwidth = windowWidth
+    if ( newwidth > 600 ) newwidth = 600
+    resizeCanvas(newwidth, newwidth);
+}
