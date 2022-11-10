@@ -96,7 +96,8 @@ function draw(){
     fill(255)
     ellipse(x,y,radius*2,radius*2)
 
-    textSize(10)
     fill(0)
+    noStroke()
+    textSize(10)
     text(labels[-last], 0, 10)
 }

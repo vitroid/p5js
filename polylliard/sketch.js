@@ -2,7 +2,7 @@ let x = []
 let y = []
 let vx = []
 let vy = []
-const dt = 10
+const dt = 0.3
 const radius = 10.0
 const N=20
 
@@ -196,8 +196,8 @@ function draw(){
         ellipse(x[i], y[i], radius*2, radius*2)
     }
 
-    textSize(10)
     fill(0)
+    noStroke()
     let msg = ""
     if (last[0] < 0){
         msg = labels[-last[0]] + "-" + last[1]
@@ -205,5 +205,6 @@ function draw(){
     else{
         msg = last[0] + "-" + last[1]
     }
+    textSize(10)
     text(msg, 0, 10)
 }
