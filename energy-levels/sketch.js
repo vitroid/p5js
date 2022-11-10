@@ -31,7 +31,8 @@ function show_state(){
 }
 
 function setup(){
-    createCanvas(300,300)
+    let canvas = createCanvas(300,300)
+    canvas.parent('sketch-holder')
     frameRate(30)
     for(let i=0;i<10;i++){
         hist[i] = 0

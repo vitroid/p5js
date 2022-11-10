@@ -27,6 +27,7 @@ Samples of [p5.js](https://vitroid.github.io/p5js/p5.js/)(https://p5js.org).
 
 ## Monte Carlo法
 
+* [pi](https://vitroid.github.io/p5js/pi/): モンテカルロ法による円周率の推定
 * [montecarlo](https://vitroid.github.io/p5js/montecarlo/): モンテカルロ法によるLennard-Jones分子のシミュレーション
 ## その他
 

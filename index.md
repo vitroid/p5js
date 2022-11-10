@@ -27,6 +27,7 @@ Samples of [p5.js](https://p5js.org).
 
 ## Monte Carlo法
 
+* [pi](pi/): モンテカルロ法による円周率の推定
 * [montecarlo](montecarlo/): モンテカルロ法によるLennard-Jones分子のシミュレーション
 ## その他
 
