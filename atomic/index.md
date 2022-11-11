@@ -1,6 +1,6 @@
 # Atomic interaction
 
-重力が分子間力に変わっても、計算の方法は同じです。ここでは、[gravity-3body]の力の計算の部分を、典型的な分子間力であるLennard-Jones相互作用に書きかえます。
+重力が分子間力に変わっても、計算の方法は同じです。ここでは、[gravity-3body](../gravity-3body)の力の計算の部分を、典型的な分子間力であるLennard-Jones相互作用に書きかえます。
 
 ## 分子間力
 
