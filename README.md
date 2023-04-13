@@ -40,6 +40,7 @@ Samples of [p5.js](https://p5js.org).
 ## その他
 
 * [energy-levels](https://vitroid.github.io/p5js/energy-levels/): ボルツマン分布
+* [harddisk](https://vitroid.github.io/p5js/harddisk/): 剛体円盤のシミュレーション(物理化学III用)
 ## Repository
 
 * [GitHub/vitroid/p5js](https://github.com/vitroid/p5js)
