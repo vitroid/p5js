@@ -1,5 +1,13 @@
 # p5js
-Samples of [p5.js](https://vitroid.github.io/p5js/p5.js/)(https://p5js.org).
+Samples of [p5.js](https://p5js.org).
+
+## この教材の使い方
+
+* このリポジトリに含まれる全ファイルを、[GitHub](https://github.com/vitroid/p5js)からCloneするか、Downloadして下さい。
+* VSCodeをインストールして下さい。
+* VSCodeを起動し、ウィンドウ左橋のExtensionsアイコン![Extensions icon](https://i.gyazo.com/7028b55ef50381f41588647483660706.png)を押して、"Live Server"をインストールしてください。
+* VSCodeの画面下端の「Go Live」を押すと、ブラウザ上でこのページが表示されます。あとはリンクをたどって、各プログラムを実行して下さい。
+* ソースコードを修正すると、ブラウザ上に即座に反映されます。思うぞんぶん改造して下さい。
 
 ## 剛体球の力学
 * [blockbuster](https://vitroid.github.io/p5js/blockbuster/): 壁に衝突する剛体円盤
@@ -32,6 +40,7 @@ Samples of [p5.js](https://vitroid.github.io/p5js/p5.js/)(https://p5js.org).
 ## その他
 
 * [energy-levels](https://vitroid.github.io/p5js/energy-levels/): ボルツマン分布
+* [harddisk](https://vitroid.github.io/p5js/harddisk/): 剛体円盤のシミュレーション(物理化学III用)
 ## Repository
 
-* [GitHub/vitroid/p5js](https://vitroid.github.io/p5js/GitHub/vitroid/p5js/)(https://github.com/vitroid/p5js)
+* [GitHub/vitroid/p5js](https://github.com/vitroid/p5js)

@@ -2,7 +2,8 @@ const dt = 0.1
 const mass = 0.3
 const k = 0.1
 const fm=0.1
-const fc=100 * mass
+const fs=100
+const fc=fs * mass
 
 let x = 0.0
 let y = 0.0

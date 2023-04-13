@@ -1,6 +1,6 @@
 index.html: index.md ../header.html ../footer.html ../Makefile.children ../mdcompiler.py
 	cp ../header.html $@
-	python ../mdcompiler.py < $< >> $@
+	cat $< | python ../mdcompiler.py >> $@
 	cat ../footer.html >> $@
 
 diff:

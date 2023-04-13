@@ -12,7 +12,7 @@
 
 $G$は万有引力定数、$M, m$は相互作用する物体の質量、$d$は物体間の距離です。
 
-ベクトルに書きかえる場合は、[yoyo-string]の場合と同様、力の大きさと向きを別々に計算します。
+ベクトルに書きかえる場合は、[yoyo-string](../yoyo-string)の場合と同様、力の大きさと向きを別々に計算します。
 
 (2')$$\mathbf F=-G{Mm\over |\mathbf d|^2}\cdot {\mathbf d\over |\mathbf d|}$$
 

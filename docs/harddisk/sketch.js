@@ -2,18 +2,22 @@ let x = []
 let y = []
 let vx = []
 let vy = []
-const dt = 0.3
-const radius = 10.0
-const N=20
+let dt = 0.2
+const radius = 30.0
+const N=30
 
 function setup(){
-    var canvas = createCanvas(141,100)
+    var canvas = createCanvas(400,400)
     canvas.parent('sketch-holder')
     frameRate(30)
     let row = 0
     let col = 0
     const xspacing = radius*2.02
     const yspacing = xspacing*Math.sqrt(3)/2
+    vx.push(1.0)
+    vy.push(-1,0)
+    x.push(0.1)
+    y.push(height-0.3)
     while ( x.length < N ){
         x.push(col*xspacing+0.01)
         y.push(row*yspacing+0.01)
@@ -26,12 +30,13 @@ function setup(){
                 noLoop()
             }
         }
-        vx.push(Math.random())
-        vy.push(Math.random())
+        vx.push(0.0)
+        vy.push(0.0)
     }
 }
 
 
+var visual = true
 const NOCOLL = -1
 const LEFT = -2
 const RIGHT = -3
@@ -39,6 +44,45 @@ const TOP = -4
 const BOTTOM = -5
 const labels = ["", "", "LEFT", "RIGHT", "TOP", "BOTTOM"]
 // 時間をdtだけ進める。
+
+
+function mousePressed(){
+    dt *= 2
+}
+
+
+var statcount = 0;
+var histx = {}
+var histy = {}
+const NBIN = 40
+
+function vstat()
+{
+    if ( last[0] == NOCOLL ) return
+    for(let i=0; i<N; i++){
+        bin = int(vx[i]*30)
+        if (!(bin in histx)) histx[bin] = 0
+        histx[bin] +=dt
+        bin = int(vy[i]*30)
+        if (!(bin in histy)) histy[bin] = 0
+        histy[bin] +=dt
+    }
+    if ( visual ){
+        stroke(0)
+        fill(255)
+        let binw = height / NBIN
+        for (let i=-NBIN/2; i<NBIN/2; i++){
+            rect(0,(i+NBIN/2)*binw,5*histx[i]*width/(N*statcount),binw)
+        }
+        binw = width / NBIN
+        for (let i=-NBIN/2; i<NBIN/2; i++){
+            rect((i+NBIN/2)*binw,0,binw,5*histx[i]*height/(N*statcount))
+        }
+    }
+    statcount +=dt
+}
+
+
 
 // 衝突判定が非常に複雑になる。
 // 動きを考えるべき物体が複数あるので、
@@ -186,12 +230,15 @@ let last = [NOCOLL, NOCOLL]
 
 function draw(){
     const N=x.length
-    last = progress(dt, last)
-    console.log(last)
-    // 表示
     background(200)
+    for (let i=0;i<10;i++){
+        last = progress(dt, last)
+        vstat()
+    }
+    // console.log(last)
+    // 表示
     stroke(0)
-    fill(255)
+    fill(255,255,255,180)
     for(let i=0;i<N; i++){
         ellipse(x[i], y[i], radius*2, radius*2)
     }
