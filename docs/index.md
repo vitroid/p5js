@@ -41,6 +41,7 @@ Samples of [p5.js](https://p5js.org).
 
 * [energy-levels](energy-levels/): ボルツマン分布
 * [harddisk](harddisk/): 剛体円盤のシミュレーション(物理化学III用)
+* [osmosis](osmosis/): 浸透圧
 ## Repository
 
 * [GitHub/vitroid/p5js](https://github.com/vitroid/p5js)
