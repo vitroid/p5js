@@ -3,7 +3,6 @@ let y = [];
 let vx = [];
 let vy = [];
 const dt = 1 / 30;
-const radius = 6.0;
 const N = 10; //nine balls
 const colors = [
   "white",
@@ -17,23 +16,28 @@ const colors = [
   "black",
   "red",
 ];
+const ballLabels = ["", "1", "5", "6", "2", "9", "4", "7", "8", "3"];
+const scale = 2; // 2 pixel == 1 cm
+const tableWidth = 163 * scale;
+const tableDepth = 290 * scale;
+const radius = 6.0 * scale;
 
 function setup() {
-  var canvas = createCanvas(163, 290);
+  var canvas = createCanvas(tableWidth, tableDepth);
   canvas.parent("sketch-holder");
   frameRate(30);
 
   // 初期配置と初速の設定
   const xspacing = radius * 2.02;
   const yspacing = (xspacing * Math.sqrt(3)) / 2;
-  const xcenter = 163 / 2;
-  const ycenter = 290 / 4;
+  const xcenter = tableWidth / 2;
+  const ycenter = tableDepth / 4;
   x.push(xcenter);
-  y.push(290 - ycenter);
+  y.push(tableDepth - ycenter);
   var r = Date.now() / 1000;
   r -= int(r);
-  vx.push((r - 0.5) * 0.01);
-  vy.push(-200); // pool shot speed 2 m/s
+  vx.push((r - 0.5) * 0.01 * scale);
+  vy.push(-200 * scale); // pool shot speed 2 m/s
   for (let row = -2; row <= 2; row++) {
     const ncol = 3 - abs(row);
     for (let col = 0; col < ncol; col++) {
@@ -204,10 +208,19 @@ function draw() {
   }
   // 表示
   background(200);
-  stroke(0);
+  textSize(15);
   for (let i = 0; i < N; i++) {
+    stroke(0);
     fill(colors[i]);
     ellipse(x[i], y[i], radius * 2, radius * 2);
+    // label
+    noStroke();
+    if (ballLabels[i] == "1" || ballLabels[i] == "9") {
+      fill(0);
+    } else {
+      fill(255);
+    }
+    text(ballLabels[i], x[i] - 4, y[i] + 5);
   }
 
   fill(0);
