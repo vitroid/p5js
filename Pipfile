@@ -9,6 +9,7 @@ name = "pypi"
 matplotlib = "*"
 jinja2 = "*"
 markdown = "*"
+pygments = "*"
 
 [requires]
 python_version = "3.9"

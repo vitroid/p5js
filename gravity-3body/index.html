@@ -1,25 +1,25 @@
 <!DOCTYPE HTML>
 <html>
 
-<head>
-    <link rel="stylesheet" href="../style.css">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
-    <script src="sketch.js" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../hilite.css">
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+        <script src="sketch.js" type="text/javascript"></script>
+        <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
-    <script type="text/javascript"
-        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-</head>
+        <script type="text/javascript"
+            src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            </script>
+    </head>
 
-<body>
-    <div class="main">
-        <div id="sketch-holder">
-            <!-- Our sketch will go here! -->
-        </div>
-        <div class="text">
-<h1>Gravity between three bodies</h1>
+    <body>
+        <div class="main">
+            <div id="sketch-holder">
+                <!-- Our sketch will go here! -->
+            </div>
+            <div class="text"><h1>Gravity between three bodies</h1>
 <p>三体の運動をシミュレーションしてみます。マウスポインタはウィンドウの中央付近にじっとさせておくのが良いでしょう。(それでも、安定な運動にはならず、いずれ月は飛び去ってしまいます)</p>
 <h2>多体相互作用</h2>
 <p>バネでつながれた物体の運動と違うのは、重力はどの物体の間にもわけへだてなく作用するという点です。物体が3つあれば、3 通りの力が働き、10体あれば 45 通りの組みあわせを全部あつかう必要があります。このように、物体の個数が$N$倍になると、計算量が$N^2$倍になります。数万原子を扱う最先端の分子動力学シミュレーションや、数百万個の天体を扱う天体シミュレーションでは、これをいかに近似して計算量を減らすかが重要な問題になってきます。</p>

@@ -1,25 +1,25 @@
 <!DOCTYPE HTML>
 <html>
 
-<head>
-    <link rel="stylesheet" href="../style.css">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
-    <script src="sketch.js" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../hilite.css">
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+        <script src="sketch.js" type="text/javascript"></script>
+        <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
-    <script type="text/javascript"
-        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-</head>
+        <script type="text/javascript"
+            src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            </script>
+    </head>
 
-<body>
-    <div class="main">
-        <div id="sketch-holder">
-            <!-- Our sketch will go here! -->
-        </div>
-        <div class="text">
-<h1>Yo-yo</h1>
+    <body>
+        <div class="main">
+            <div id="sketch-holder">
+                <!-- Our sketch will go here! -->
+            </div>
+            <div class="text"><h1>Yo-yo</h1>
 <p>お祭りの屋台で風船釣りで遊んだことはありますか? 重い物体がマウスポインタの先にゴムでつながっている状況をシミュレーションで再現してみます。</p>
 <h2>運動方程式</h2>
 <p>何も力が加わっていない物体は等速直進運動しますが、力$F$が加わると、物体は力の方向に加速されます。加速されにくさは<em>質量</em>$m$で表されます。加速度を$a$とすると、</p>

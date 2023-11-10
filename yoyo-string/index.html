@@ -1,25 +1,25 @@
 <!DOCTYPE HTML>
 <html>
 
-<head>
-    <link rel="stylesheet" href="../style.css">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
-    <script src="sketch.js" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../hilite.css">
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+        <script src="sketch.js" type="text/javascript"></script>
+        <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
-    <script type="text/javascript"
-        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-</head>
+        <script type="text/javascript"
+            src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            </script>
+    </head>
 
-<body>
-    <div class="main">
-        <div id="sketch-holder">
-            <!-- Our sketch will go here! -->
-        </div>
-        <div class="text">
-<h1>String Yo-yo</h1>
+    <body>
+        <div class="main">
+            <div id="sketch-holder">
+                <!-- Our sketch will go here! -->
+            </div>
+            <div class="text"><h1>String Yo-yo</h1>
 <p>ゴムの代わりに、ひもでつながっている場合を考えてみます。(分子シミュレーションからだいぶ脱線してきました。)</p>
 <h2>ひもの力</h2>
 <p>ゴムとひもの違いは次の通りです。</p>
@@ -42,12 +42,12 @@
 <p>(3)$$F_g=mg$$
 と書けます。</p>
 <p>プログラムの冒頭で、重力加速度定数を設定します。</p>
-<pre class="codehilite"><code>const g=200.0
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">g</span><span class="o">=</span><span class="mf">200.0</span>
+</code></pre></div>
 
 <p>そして、外力を計算する時に、$y$方向にのみ力を追加します。動摩擦力の計算のあとがいいようです。</p>
-<pre class="codehilite"><code>    forcey += mass*g
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nx">forcey</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">mass</span><span class="o">*</span><span class="nx">g</span>
+</code></pre></div>
 </div>
 </div>
 </body>
