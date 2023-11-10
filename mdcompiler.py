@@ -9,6 +9,8 @@
 import sys
 
 import markdown
+import jinja2 as jj
 
-output = markdown.markdown(sys.stdin.read(), extensions=['codehilite', 'fenced_code'])
+t = jj.Environment(loader=jj.FileSystemLoader(".")).from_string(sys.stdin.read())
+output = markdown.markdown(t.render(), extensions=["codehilite", "fenced_code"])
 print(output)
