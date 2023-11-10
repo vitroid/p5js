@@ -68,4 +68,10 @@ function draw(){
     fill(255)
     ellipse(x,y,50,50)
     ellipse(x2,y2,20,20)
+
+    last = eps.length - 1
+    totalEnergy = eps[last] + eks[last]
+    noStroke()
+    fill(0)
+    text(totalEnergy.toFixed(0), 10,590)
 }
