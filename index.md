@@ -14,6 +14,7 @@ Samples of [p5.js](https://p5js.org).
 * [airhockey](airhockey/): 壁とパドルに衝突する剛体円盤
 * [billiard](billiard/): 自由衝突する2つの剛体円盤
 * [polylliard](polylliard/): 自由衝突する多数の剛体円盤
+* [realistic-billiard](realistic-billiard/): ビリヤード
 * [hardspheres](hardspheres/): 自由衝突する多数の剛体球
 
 ## 分子動力学法

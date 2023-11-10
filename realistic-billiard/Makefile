@@ -1,2 +1,2 @@
-PREV=realistic-billiard
+PREV=polylliard
 include ../Makefile.children
