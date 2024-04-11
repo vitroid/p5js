@@ -2,40 +2,55 @@ let x = [];
 let y = [];
 let vx = [];
 let vy = [];
-let dt = 0.2;
-const radius = 30.0;
-const N = 30;
+const dt = 1 / 30;
+const N = 10; //nine balls
+const colors = [
+  "white",
+  "yellow",
+  "orange",
+  "green",
+  "blue",
+  "yellow",
+  "purple",
+  "brown",
+  "black",
+  "red",
+];
+const ballLabels = ["", "1", "5", "6", "2", "9", "4", "7", "8", "3"];
+const scale = 2; // 2 pixel == 1 cm
+const tableWidth = 163 * scale;
+const tableDepth = 290 * scale;
+const radius = 6.0 * scale;
 
 function setup() {
-  var canvas = createCanvas(400, 400);
+  var canvas = createCanvas(tableWidth, tableDepth);
   canvas.parent("sketch-holder");
   frameRate(30);
-  let row = 0;
-  let col = 0;
+
+  // 初期配置と初速の設定
   const xspacing = radius * 2.02;
   const yspacing = (xspacing * Math.sqrt(3)) / 2;
-  vx.push(1.0);
-  vy.push(-1, 0);
-  x.push(0.1);
-  y.push(height - 0.3);
-  while (x.length < N) {
-    x.push(col * xspacing + 0.01);
-    y.push(row * yspacing + 0.01);
-    col += 1;
-    if (col * xspacing + 0.01 > width) {
-      row += 1;
-      col = (row % 2) * 0.5;
-      if (row * yspacing + 0.01 > height) {
-        // stop running
-        noLoop();
-      }
+  const xcenter = tableWidth / 2;
+  const ycenter = tableDepth / 4;
+  x.push(xcenter);
+  y.push(tableDepth - ycenter);
+  var r = Date.now() / 1000;
+  r -= int(r);
+  vx.push((r - 0.5) * 0.01 * scale);
+  vy.push(-200 * scale); // pool shot speed 2 m/s
+  for (let row = -2; row <= 2; row++) {
+    const ncol = 3 - abs(row);
+    for (let col = 0; col < ncol; col++) {
+      let rx = xcenter + xspacing * (col - (ncol - 1) / 2);
+      let ry = ycenter + yspacing * row;
+      x.push(rx);
+      y.push(ry);
+      vx.push(0);
+      vy.push(0);
     }
-    vx.push(0.0);
-    vy.push(0.0);
   }
 }
 
-var visual = true;
 const NOCOLL = -1;
 const LEFT = -2;
 const RIGHT = -3;
@@ -43,51 +58,6 @@ const TOP = -4;
 const BOTTOM = -5;
 const labels = ["", "", "LEFT", "RIGHT", "TOP", "BOTTOM"];
 // 時間をdtだけ進める。
-
-function mousePressed() {
-  dt *= 2;
-}
-
-var statcount = 0;
-var histx = {};
-var histy = {};
-const NBIN = 40;
-
-function vstat() {
-  if (last[0] == NOCOLL) return;
-  for (let i = 0; i < N; i++) {
-    if (vx[i] == 0 && vy[i] == 0) continue;
-    bin = floor(vx[i] * 30);
-    if (!(bin in histx)) histx[bin] = 0;
-    histx[bin] += dt;
-    bin = floor(vy[i] * 30);
-    if (!(bin in histy)) histy[bin] = 0;
-    histy[bin] += dt;
-  }
-  if (visual) {
-    stroke(0);
-    fill(255);
-    let binw = height / NBIN;
-    for (let i = -NBIN / 2; i < NBIN / 2; i++) {
-      rect(
-        0,
-        (i + NBIN / 2) * binw,
-        (5 * histy[i] * width) / (N * statcount),
-        binw
-      );
-    }
-    binw = width / NBIN;
-    for (let i = -NBIN / 2; i < NBIN / 2; i++) {
-      rect(
-        (i + NBIN / 2) * binw,
-        0,
-        binw,
-        (5 * histx[i] * height) / (N * statcount)
-      );
-    }
-  }
-  statcount += dt;
-}
 
 // 衝突判定が非常に複雑になる。
 // 動きを考えるべき物体が複数あるので、
@@ -230,17 +200,27 @@ let last = [NOCOLL, NOCOLL];
 
 function draw() {
   const N = x.length;
-  background(200);
-  for (let i = 0; i < 10; i++) {
-    last = progress(dt, last);
-    vstat();
-  }
-  // console.log(last)
-  // 表示
-  stroke(0);
-  fill(255, 255, 255, 180);
+  last = progress(dt, last);
+  // 摩擦
   for (let i = 0; i < N; i++) {
+    vx[i] *= 0.994;
+    vy[i] *= 0.994;
+  }
+  // 表示
+  background(200);
+  textSize(15);
+  for (let i = 0; i < N; i++) {
+    stroke(0);
+    fill(colors[i]);
     ellipse(x[i], y[i], radius * 2, radius * 2);
+    // label
+    noStroke();
+    if (ballLabels[i] == "1" || ballLabels[i] == "9") {
+      fill(0);
+    } else {
+      fill(255);
+    }
+    text(ballLabels[i], x[i] - 4, y[i] + 5);
   }
 
   fill(0);

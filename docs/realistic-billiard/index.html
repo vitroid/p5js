@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../hilite.css">
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+        <script src="sketch.js" type="text/javascript"></script>
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+        <script type="text/javascript"
+            src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            </script>
+    </head>
+
+    <body>
+        <div class="main">
+            <div id="sketch-holder">
+                <!-- Our sketch will go here! -->
+            </div>
+            <div class="text"><h1>Realistic Billiard</h1>
+<p><a href="../polylliard">polylliard</a>から脱線して、本気でビリヤードっぽくしてみます。</p>
+<ul>
+<li>プール台の寸法にあわせます。(163 x 290 cm)</li>
+<li>ボールの大きさは6 cmとしました。</li>
+<li>ナインボールの配置にします。</li>
+<li>摩擦を追加しました。</li>
+<li>最初のショットは、微妙に左右どちらかにずれるようにしています。そのため、その後の球の運動はランダムになります。</li>
+</ul>
+<h2>改造できるかな</h2>
+<p>ここから先はやりたい人が趣味で楽しんで下さい。</p>
+<ul>
+<li>ポケットをつける。</li>
+<li>壁に球がめりこんでから反射するのはちょっと妙に見えますね。衝突判定をすこし修正する必要がありそうです。</li>
+<li>回転の効果は考えていません。</li>
+<li>実際の球は、速度が遅くなるとピタっと止まりますが、その効果が入っておらず、いつまでもじわじわ動くのは奇妙です。</li>
+<li>第2打以降、自由にマウスで打つ速度と方向を指定できるといいですね。</li>
+<li>衝突音、ポケットに入る音を出す。(p5jsには、音を出す機能はないようです)</li>
+</ul>
+</div>
+</div>
+</body>
+
+</html>

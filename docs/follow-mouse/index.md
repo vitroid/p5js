@@ -6,7 +6,7 @@
 
 ## setup
 関数`setup()`には、初期設定を書いておきます。この関数は、アニメーションをはじめる前に、一度だけ実行されます。
-```
+```javascript
 function setup(){
     var canvas = createCanvas(600,600)
     canvas.parent('sketch-holder')
@@ -23,7 +23,7 @@ function setup(){
 
 関数`draw()`は、1コマ1コマの描き方を指示する関数です。この関数は、毎秒30回呼びだされます。
 
-```
+```javascript
 function draw(){
     // 表示
     background(200)
@@ -48,9 +48,11 @@ function draw(){
 1. 背景色の指定をなくしてみて下さい。
 
 2. 円の塗り色が、時間変化するようにして下さい。変数`frameCount`には、今描いているコマ数が自動的に設定されています。これを使って、赤緑青の強度を次のように設定します。
-```
+```javascript
 let R = (frameCount*2) % 256
 let G = (frameCount*3) % 256
 let B = (frameCount*5) % 256
 fill(R,G,B)
 ```
+
+ほかにも何百もの描画命令が準備されています。[p5js Reference](https://p5js.org/reference/)を参照して下さい。

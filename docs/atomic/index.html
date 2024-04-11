@@ -1,25 +1,25 @@
 <!DOCTYPE HTML>
 <html>
 
-<head>
-    <link rel="stylesheet" href="../style.css">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
-    <script src="sketch.js" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../hilite.css">
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+        <script src="sketch.js" type="text/javascript"></script>
+        <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
-    <script type="text/javascript"
-        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-</head>
+        <script type="text/javascript"
+            src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            </script>
+    </head>
 
-<body>
-    <div class="main">
-        <div id="sketch-holder">
-            <!-- Our sketch will go here! -->
-        </div>
-        <div class="text">
-<h1>Atomic interaction</h1>
+    <body>
+        <div class="main">
+            <div id="sketch-holder">
+                <!-- Our sketch will go here! -->
+            </div>
+            <div class="text"><h1>Atomic interaction</h1>
 <p>重力が分子間力に変わっても、計算の方法は同じです。ここでは、<a href="../gravity-3body">gravity-3body</a>の力の計算の部分を、典型的な分子間力であるLennard-Jones相互作用に書きかえます。</p>
 <h2>分子間力</h2>
 <p>Lennard-Jones相互作用の力は、次のように書けます。</p>
