@@ -1,7 +1,0 @@
-index.html: index.md ../header.html ../footer.html ../Makefile.children ../mdcompiler.py
-	cp ../header.html $@
-	python ../mdcompiler.py < $< >> $@
-	cat ../footer.html >> $@
-
-diff:
-	diff -yb ../$(PREV)/sketch.js sketch.js
