@@ -1,4 +1,5 @@
 # p5js
+
 Samples of [p5.js](https://p5js.org).
 
 ## この教材の使い方
@@ -10,14 +11,16 @@ Samples of [p5.js](https://p5js.org).
 * ソースコードを修正すると、ブラウザ上に即座に反映されます。思うぞんぶん改造して下さい。
 
 ## 剛体球の力学
+
 * [blockbuster](blockbuster/): 壁に衝突する剛体円盤
 * [airhockey](airhockey/): 壁とパドルに衝突する剛体円盤
 * [billiard](billiard/): 自由衝突する2つの剛体円盤
 * [polylliard](polylliard/): 自由衝突する多数の剛体円盤
-* [realistic-billiard](realistic-billiard/): ビリヤード
+* [realistic-billiard](realistic-billiard/): もうすこし本格的なビリヤード
 * [hardspheres](hardspheres/): 自由衝突する多数の剛体球
 
 ## 分子動力学法
+
 * [follow-mouse](follow-mouse/): マウスカーソルに固定された質点の運動
 * [yoyo](yoyo/): マウスカーソルにバネでつながれた質点の運動
 * [yoyo-friction](yoyo-friction/): マウスカーソルにバネでつながれた質点の運動 (摩擦あり)
@@ -38,11 +41,13 @@ Samples of [p5.js](https://p5js.org).
 
 * [pi](pi/): モンテカルロ法による円周率の推定
 * [montecarlo](montecarlo/): モンテカルロ法によるLennard-Jones分子のシミュレーション
+
 ## その他
 
 * [energy-levels](energy-levels/): ボルツマン分布
 * [harddisk](harddisk/): 剛体円盤のシミュレーション(物理化学III用)
 * [osmosis](osmosis/): 浸透圧
+
 ## Repository
 
 * [GitHub/vitroid/p5js](https://github.com/vitroid/p5js)

@@ -1,4 +1,5 @@
 # p5js
+
 Samples of [p5.js](https://p5js.org).
 
 ## この教材の使い方
@@ -10,13 +11,16 @@ Samples of [p5.js](https://p5js.org).
 * ソースコードを修正すると、ブラウザ上に即座に反映されます。思うぞんぶん改造して下さい。
 
 ## 剛体球の力学
+
 * [blockbuster]: 壁に衝突する剛体円盤
 * [airhockey]: 壁とパドルに衝突する剛体円盤
 * [billiard]: 自由衝突する2つの剛体円盤
 * [polylliard]: 自由衝突する多数の剛体円盤
+* [realistic-billiard]: もうすこし本格的なビリヤード
 * [hardspheres]: 自由衝突する多数の剛体球
 
 ## 分子動力学法
+
 * [follow-mouse]: マウスカーソルに固定された質点の運動
 * [yoyo]: マウスカーソルにバネでつながれた質点の運動
 * [yoyo-friction]: マウスカーソルにバネでつながれた質点の運動 (摩擦あり)
@@ -43,7 +47,6 @@ Samples of [p5.js](https://p5js.org).
 * [energy-levels]: ボルツマン分布
 * [harddisk]: 剛体円盤のシミュレーション(物理化学III用)
 * [osmosis]: 浸透圧
-* [realistic-billiard]: もうすこし本格的なビリヤード
 
 ## Repository
 
