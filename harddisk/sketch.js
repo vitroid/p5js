@@ -60,10 +60,10 @@ function vstat()
 {
     if ( last[0] == NOCOLL ) return
     for(let i=0; i<N; i++){
-        bin = int(vx[i]*30)
+        bin = floor(vx[i]*30)
         if (!(bin in histx)) histx[bin] = 0
         histx[bin] +=dt
-        bin = int(vy[i]*30)
+        bin = floor(vy[i]*30)
         if (!(bin in histy)) histy[bin] = 0
         histy[bin] +=dt
     }
