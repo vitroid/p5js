@@ -37,11 +37,14 @@ Samples of [p5.js](https://p5js.org).
 
 * [pi](https://vitroid.github.io/p5js/pi/): モンテカルロ法による円周率の推定
 * [montecarlo](https://vitroid.github.io/p5js/montecarlo/): モンテカルロ法によるLennard-Jones分子のシミュレーション
+
 ## その他
 
 * [energy-levels](https://vitroid.github.io/p5js/energy-levels/): ボルツマン分布
 * [harddisk](https://vitroid.github.io/p5js/harddisk/): 剛体円盤のシミュレーション(物理化学III用)
 * [osmosis](https://vitroid.github.io/p5js/osmosis/): 浸透圧
+* [realistic-billiard](https://vitroid.github.io/p5js/realistic-billiard/): もうすこし本格的なビリヤード
+
 ## Repository
 
 * [GitHub/vitroid/p5js](https://github.com/vitroid/p5js)

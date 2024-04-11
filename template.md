@@ -37,11 +37,14 @@ Samples of [p5.js](https://p5js.org).
 
 * [pi]: モンテカルロ法による円周率の推定
 * [montecarlo]: モンテカルロ法によるLennard-Jones分子のシミュレーション
+
 ## その他
 
 * [energy-levels]: ボルツマン分布
 * [harddisk]: 剛体円盤のシミュレーション(物理化学III用)
 * [osmosis]: 浸透圧
+* [realistic-billiard]: もうすこし本格的なビリヤード
+
 ## Repository
 
 * [GitHub/vitroid/p5js](https://github.com/vitroid/p5js)
