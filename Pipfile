@@ -4,11 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-markdown = "*"
-mistune = "*"
 
 [dev-packages]
 matplotlib = "*"
+jinja2 = "*"
+markdown = "*"
+pygments = "*"
 
 [requires]
 python_version = "3.9"

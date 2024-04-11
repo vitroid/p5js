@@ -17,3 +17,6 @@ index.md: template.md Makefile
 	cp header.html $@
 	python mdcompiler.py < $< >> $@
 	cat footer.html >> $@
+
+touch:
+	for d in `ls -d */ | grep -v dist | grep -v git`; do make -C $$d touch; done
