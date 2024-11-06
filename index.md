@@ -6,7 +6,7 @@ Samples of [p5.js](https://p5js.org).
 
 * このリポジトリに含まれる全ファイルを、[GitHub](https://github.com/vitroid/p5js)からCloneするか、Downloadして下さい。
 * VSCodeをインストールして下さい。
-* VSCodeを起動し、ウィンドウ左橋のExtensionsアイコン![Extensions icon](https://i.gyazo.com/7028b55ef50381f41588647483660706.png)を押して、"Live Server"をインストールしてください。
+* VSCodeを起動し、ウィンドウ左橋のExtensionsアイコン![Extensions icon](https://github.com/vitroid/p5js/raw/main/icons/extension.tn.png?raw=true)を押して、"![LiveServer icon](https://github.com/vitroid/p5js/raw/main/icons/liveserver.tn.png?raw=true) Live Server"をインストールしてください。
 * VSCodeの画面下端の「Go Live」を押すと、ブラウザ上でこのページが表示されます。あとはリンクをたどって、各プログラムを実行して下さい。
 * ソースコードを修正すると、ブラウザ上に即座に反映されます。思うぞんぶん改造して下さい。
 

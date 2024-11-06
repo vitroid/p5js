@@ -6,11 +6,11 @@ all: index.html README.md
 # 	rsync -av --exclude="docs" * docs
 # 	# cd dist; git add .; git commit -am '.'; git push origin gh-pages
 
-README.md: template.md Makefile
+README.md: temp_README.md Makefile
 	sed -e 's#\[\(.*\)\]\([^(]\)#[\1](https://vitroid.github.io/p5js/\1/)\2#' $< > $@
 
 
-index.md: template.md Makefile
+index.md: temp_README.md Makefile
 	sed -e 's#\[\(.*\)\]\([^(]\)#[\1](\1/)\2#' $< > $@
 
 %.html: %.md
