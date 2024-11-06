@@ -1,2 +1,2 @@
-%.tn.png: %.png
-	sips -Z 16 $< --out $@
+%.tn.png: %.png Makefile
+	sips -Z 32 $< --out $@
