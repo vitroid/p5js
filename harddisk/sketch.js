@@ -7,7 +7,7 @@ const radius = 30.0;
 const N = 30;
 
 function setup() {
-  var canvas = createCanvas(400, 400);
+  var canvas = createCanvas(600, 600);
   canvas.parent("sketch-holder");
   frameRate(30);
   let row = 0;

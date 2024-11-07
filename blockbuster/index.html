@@ -19,7 +19,11 @@
             <div id="sketch-holder">
                 <!-- Our sketch will go here! -->
             </div>
-            <div class="text"><h1>Blockbuster</h1>
+            <div class="text"><ul>
+<li><a href="..">Index</a></li>
+<li><a href="https://github.com/vitroid/p5js/blob/main/blockbuster/sketch.js">コード</a></li>
+</ul>
+<h1>Blockbuster</h1>
 <p>物体の運動のしかたを、コンピュータで再現する一番簡単な例として、剛体球の運動を表現してみましょう。</p>
 <p>剛体球とは、パチンコ玉やビリヤードの玉のように、硬い球のことです。</p>
 <p>最初から三次元の運動を考えるのは難しいので、まず二次元の「剛体円盤」(hard-disk)一つだけの運動を考えます。</p>
@@ -40,12 +44,14 @@
 </ul>
 <h2>改造してみよう</h2>
 <p>円盤の動きがわかりやすいように、毎秒1コマずつ表示するようになっています。以下の部分を修正して毎秒30コマでなめらかに動くようにして下さい。</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">frameRate</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-javascript">frameRate(1)
+</code></pre>
 
 <p>動きが速すぎる場合は、$dt$の値を小さめにしましょう。</p>
-<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-javascript">const dt = 10
+</code></pre>
+
+<p><a href="../airhockey">次: airhockey</a></p>
 </div>
 </div>
 </body>

@@ -8,20 +8,22 @@ m = 1.0
 k = 1.0
 dt = 0.1
 
+
 def onestep(dt):
-    global x,v,k,m
-    x += v*dt/2
-    F = -k*x
-    a = F/m
-    v += a*dt
-    x += v*dt/2
+    global x, v, k, m
+    x += v * dt / 2
+    F = -k * x
+    a = F / m
+    v += a * dt
+    x += v * dt / 2
+
 
 def onestep_euler(dt):
-    global x,v,k,m
-    F = -k*x
-    a = F/m
-    x += v*dt
-    v += a*dt
+    global x, v, k, m
+    F = -k * x
+    a = F / m
+    x += v * dt
+    v += a * dt
 
 
 xx = []
@@ -32,7 +34,7 @@ for i in range(100):
     onestep(dt)
 
 
-plt.plot(xx,vv)
+plt.plot(xx, vv)
 
 
 xx = []
@@ -43,5 +45,5 @@ for i in range(100):
     onestep_euler(dt)
 
 
-plt.plot(xx,vv)
+plt.plot(xx, vv)
 plt.show()

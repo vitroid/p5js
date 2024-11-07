@@ -6,12 +6,12 @@
 
 Lennard-Jones相互作用の力は、次のように書けます。
 
-(1)$$F=4\epsilon\left[12\left({\sigma^{12}\over d^{13}}\right)-6\left({\sigma^{6}\over d^{7}}\right)\right]$$
+$$F=4\epsilon\left[12\left({\sigma^{12}\over d^{13}}\right)-6\left({\sigma^{6}\over d^{7}}\right)\right]\tag{1}$$
 ただし、$\sigma$は分子の大きさを表わすパラメータ、$\epsilon$は分子間力の強さを表わすパラメータで、分子の種類ごとに異なります。$d$はこれまで同僚、2つの物体の間の距離です。
 
 ベクトル形式では、
 
-(1')$$\mathbf F=4\epsilon\left[12\left({\sigma^{12}\over |\mathbf d|^{13}}\right)-6\left({\sigma^{6}\over |\mathbf d|^{7}}\right)\right]\cdot {\mathbf d\over |\mathbf d|}$$
+$$\mathbf F=4\epsilon\left[12\left({\sigma^{12}\over |\mathbf d|^{13}}\right)-6\left({\sigma^{6}\over |\mathbf d|^{7}}\right)\right]\cdot {\mathbf d\over |\mathbf d|}\tag{1'}$$
 ややこしいですが、これでも本来の分子間に働く力を正確に計算するのに比べると、大幅に簡単になっています。(正確な力を求めるためには、原子核のまわりにあるいくつもの電子の軌道を計算し、電子間の相互作用を計算する必要があります。)
 
 この式はあとで何度も利用するので、関数を定義して再利用できるようにしました。
@@ -23,9 +23,10 @@ Lennard-Jones相互作用の力は、次のように書けます。
 > 点線が力の関数を表す。[^1]
 
 分子間力は、
-* すぐ近くまでしか引力が働かない。
-* 近付きすぎると弾きかえす。
-* そもそも引力が弱い。
+
+- すぐ近くまでしか引力が働かない。
+- 近付きすぎると弾きかえす。
+- そもそも引力が弱い。
 
 という特徴があります。このため、Lennard-Jones相互作用のみが働く物質はほとんどが常温では気体です。(固体や液体になるためには、分子同士が強くひきあわなければならないが、温度が高いと運動エネルギーが大きいので引きあえない)
 

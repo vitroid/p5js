@@ -1,7 +1,7 @@
 const dt = 0.1
 const mass = 0.3
 const k = 0.1
-const fm=0.1
+const fm=0.1 // 動摩擦による速度の減衰
 const fs=100
 const fc=fs * mass
 

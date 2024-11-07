@@ -1,10 +1,14 @@
-index.html: index.md ../header.html ../footer.html ../Makefile.children ../mdcompiler.py
+all: index.html diff.html
+
+index.html: index.md ../header.html ../footer.html ../Makefile.children ../mdcompiler.py Makefile
 	cp ../header.html $@
-	cat $< | python ../mdcompiler.py >> $@
+	python ../mdcompiler.py $< "$(PREV)" "$(NEXT)" >> $@
 	cat ../footer.html >> $@
 
 diff:
 	diff -yb ../$(PREV)/sketch.js sketch.js
 
+diff.html:
+	[ -e ../$(PREV)/sketch.js ] && python ../diff.py ../$(PREV)/sketch.js sketch.js > $@
 touch:
 	touch index.md

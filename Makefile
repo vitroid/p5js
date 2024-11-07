@@ -13,10 +13,13 @@ README.md: temp_README.md Makefile
 index.md: temp_README.md Makefile
 	sed -e 's#\[\(.*\)\]\([^(]\)#[\1](\1/)\2#' $< > $@
 
-%.html: %.md
+%.html: %.md Makefile header.html footer.html
 	cp header.html $@
-	python mdcompiler.py < $< >> $@
+	python mdcompiler.py $< "" "" >> $@
 	cat footer.html >> $@
 
 touch:
 	for d in `ls -d */ | grep -v dist | grep -v git`; do make -C $$d touch; done
+
+clean:
+	-rm */diff.html

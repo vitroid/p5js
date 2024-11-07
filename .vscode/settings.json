@@ -3,5 +3,9 @@
     "workbench.colorCustomizations": {
         "tree.indentGuidesStroke": "#00ff00"
     },
-    "workbench.tree.indent": 20
+    "workbench.tree.indent": 20,
+    "editor.formatOnSave": true,
+    "[markdown]": {
+        "editor.formatOnSave": false
+    }
 }

@@ -7,29 +7,29 @@
 
 何も力が加わっていない物体は等速直進運動しますが、力$F$が加わると、物体は力の方向に加速されます。加速されにくさは*質量*$m$で表されます。加速度を$a$とすると、
 
-(1)$$F=ma$$
+$$F=ma\tag{1}$$
 これが力学の最も基本的な式、運動方程式です。
 
 加速度はその名の通り、速度が毎秒どれぐらい増加するかをあらわす量で、式で書くなら次のようになります。
 
-(2)$$a={\mathrm dv\over \mathrm dt}$$
+$$a={\mathrm dv\over \mathrm dt}\tag{2}$$
 例えば、秒速10 mで走っている車の速度が、1秒後に秒速12 mになったら、その間の平均加速度は、速度の増分(2 m/s)を時間(1 s)で割って、$a=2\textrm{ m/s/s}$、あるいは$2 \textrm { m s}^{-2} $
 となります。
 
-(3)$$a\simeq{\Delta v\over \Delta t}$$
+$$a\simeq{\Delta v\over \Delta t}= \frac{v(t+\Delta t)-v(t)}{\Delta t}\tag{3}$$
 右辺の分母を左辺に移すと、速度の差分の式が得られます。
 
-(4)$$v(t+\Delta t)=v(t)+a\Delta t$$
+$$v(t+\Delta t)=v(t)+a\Delta t\tag{4}$$
 この式は、右辺に現在の速度と加速度、左辺には$\Delta t$だけ未来の速度が書かれています。つまり、現在の速度と加速度がわかれば、すこし未来の速度が計算できる、ということです。
 
 さらに、速度$v$と物体の位置$r$の間にも次のような関係があります。
 
-(5)$$v={\mathrm dr\over \mathrm dt}$$
+$$v={\mathrm dr\over \mathrm dt}\tag{5}$$
 例えば、5秒間に物体が20 m移動したなら、その間の速度は20/5=4 m/sです。こちらの関係はもっと身近ですね。
 
 加速度の式と速度の式は全く同じ形をしているので、これも差分の式に書きかえましょう。
 
-(6)$$r(t+\Delta t)=r(t)+v\Delta t$$
+$$r(t+\Delta t)=r(t)+v\Delta t\tag{6}$$
 これで、すこし未来の物体の位置がわかりました。
 
 物体の位置が変わると、力が変わります。その位置での力を求め、(2)式で加速度を求め、以下同様に計算を繰りかえすことで、つぎつぎに未来の物体の位置を予測することができます。
@@ -38,7 +38,7 @@
 
 バネやゴムの生みだす力は、近似的にバネの伸びに比例します。伸びを$d$とすれば、
 
-(7)$$F=-k d$$
+$$F=-k d\tag{7}$$
 と書けます。この比例定数$k$のことをバネ定数と言います。バネ定数が大きいバネは固いバネです。マイナスがついているのは、バネが伸びるほど、それを戻す方向の力が増える、という意味です。
 
 今、マウスポインタと物体の間の距離を$x$とすれば、(7)式で力$F$が計算できます。(バネ定数$k$は事前に与えておきます。)
@@ -51,8 +51,7 @@
 
 2次元のベクトルは、$x$方向と$y$方向(互いに直交している、例えば東西と南北)の2つの成分で表されます。例えば、ある物体が東向きに毎秒3 m、北向きに毎秒4 mで進んでいれば、その速さは5 m/sです。これをベクトルで表すなら、
 
-(8)
-$$\mathbf{v}=(3,4)$$
+$$\mathbf{v}=(3,4)\tag{8}$$
 となります。(ベクトルは太字で表すことにしましょう。)
 
 ![illustration of a vector](https://sci-pursuit.com/images/math/meaning-of-vector/meaning-of-vector_1-3.svg)
@@ -63,44 +62,39 @@ $$\mathbf{v}=(3,4)$$
 
 上ででてきた運動方程式やバネの方程式は、そのまま自然にベクトルの式におきかえることができます。
 
-(7')$$\mathbf F=-k \mathbf d$$
+$$\mathbf F=-k \mathbf d\tag{7'}$$
 
-(1')$$\mathbf a=\mathbf F/m$$
+$$\mathbf a=\mathbf F/m\tag{1'}$$
 
-(4')$$\mathbf v(t+\Delta t)=\mathbf v(t)+\mathbf a\Delta t$$
+$$\mathbf v(t+\Delta t)=\mathbf v(t)+\mathbf a\Delta t\tag{4'}$$
 
-(6')$$\mathbf r(t+\Delta t)=\mathbf r(t)+\mathbf v\Delta t$$
+$$\mathbf r(t+\Delta t)=\mathbf r(t)+\mathbf v\Delta t\tag{6'}$$
 
 そして、実際に計算するときには、$x$成分と$y$成分は別々に計算します。
 
 
-(7'')
 $$F_x=-k d_x$$
-$$F_y=-k d_y$$
+$$F_y=-k d_y\tag{7''}$$
 
-(1'')
 $$a_x=F_x/m$$
-$$a_y=F_y/m$$
+$$a_y=F_y/m\tag{1''}$$
 
-(4'')
 $$v_x(t+\Delta t)=v_x(t)+a_x\Delta t$$
-$$v_y(t+\Delta t)=v_y(t)+a_y\Delta t$$
+$$v_y(t+\Delta t)=v_y(t)+a_y\Delta t\tag{4''}$$
 
-(6'')
-$$r_x(t+\Delta t)=r_x(t)+v\Delta t$$
-$$r_y(t+\Delta t)=r_y(t)+v\Delta t$$
+$$r_x(t+\Delta t)=r_x(t)+v_x\Delta t$$
+$$r_y(t+\Delta t)=r_y(t)+v_y\Delta t\tag{6''}$$
 
 式の個数が倍になるだけです。簡単ですね。
 
 (7'')式にでてくる$d_x, d_y$は、マウスポインタの位置$(p_x, p_y)$と物体の位置$(r_x, r_y)$の相対位置です。式で書くなら、
 
-(9)$$\mathbf d=\mathbf r-\mathbf p$$
+$$\mathbf d=\mathbf r-\mathbf p\tag{9}$$
 
 成分できちんと表すなら、
 
-(9')
 $$d_x=r_x-p_x$$
-$$d_y=r_y-p_y$$
+$$d_y=r_y-p_y\tag{9'}$$
 
 と書けます。プログラム内では、マウスポインタの座標は`mouseX, mouseY`に入っていますので、これを使って相対位置`deltax, deltay`を求めています。
 

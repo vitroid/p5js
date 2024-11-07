@@ -19,7 +19,12 @@
             <div id="sketch-holder">
                 <!-- Our sketch will go here! -->
             </div>
-            <div class="text"><h1>Poly-lliard</h1>
+            <div class="text"><ul>
+<li><a href="..">Index</a></li>
+<li><a href="https://github.com/vitroid/p5js/blob/main/polylliard/sketch.js">コード</a></li>
+<li>一つ前の<a href="../billiard">billiard</a>との<a href="diff.html">差分</a></li>
+</ul>
+<h1>Poly-lliard</h1>
 <p>2つの円盤が動くのがBi-lliardなら、たくさんの円盤が動くのは、Poly-lliardと呼べるでしょう。</p>
 <p><a href="../billiard">billiard</a>ではすでに円盤の位置と速度を配列に入れるようにしたので、3個以上の円盤が動くように拡張するのも簡単です。</p>
 <ul>
@@ -30,19 +35,20 @@
 <ol>
 <li>箱が小さくて窮屈なら、箱の大きさを変えましょう。以下の行で、ウィンドウの大きさを指定しています。</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">141</span><span class="p">,</span><span class="mf">100</span><span class="p">)</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-javascript">var canvas = createCanvas(141,100)
+</code></pre>
 
 <ol>
 <li>箱を大きくできたら、円盤の数を増やしてみて下さい。箱に入りきらなかった場合は止まるようになっています。</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">N</span><span class="o">=</span><span class="mf">20</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-javascript">const N=20
+</code></pre>
 
 <ol>
 <li>もうちょっとはやく動きを観察したい場合は、$dt$を大きくして下さい。</li>
 </ol>
 <p>最近のパソコンなら、100個ぐらいは楽勝で動きますが、それ以上数を増やすにはもっと洗練されたアルゴリズムが必要になります。</p>
+<p><a href="../realistic-billiard">次: realistic-billiard</a></p>
 </div>
 </div>
 </body>

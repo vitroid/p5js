@@ -19,7 +19,12 @@
             <div id="sketch-holder">
                 <!-- Our sketch will go here! -->
             </div>
-            <div class="text"><h1>String Yo-yo</h1>
+            <div class="text"><ul>
+<li><a href="..">Index</a></li>
+<li><a href="https://github.com/vitroid/p5js/blob/main/yoyo-string/sketch.js">コード</a></li>
+<li>一つ前の<a href="../yoyo-friction">yoyo-friction</a>との<a href="diff.html">差分</a></li>
+</ul>
+<h1>String Yo-yo</h1>
 <p>ゴムの代わりに、ひもでつながっている場合を考えてみます。(分子シミュレーションからだいぶ脱線してきました。)</p>
 <h2>ひもの力</h2>
 <p>ゴムとひもの違いは次の通りです。</p>
@@ -42,12 +47,14 @@
 <p>(3)$$F_g=mg$$
 と書けます。</p>
 <p>プログラムの冒頭で、重力加速度定数を設定します。</p>
-<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">g</span><span class="o">=</span><span class="mf">200.0</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-javascript">const g=200.0
+</code></pre>
 
 <p>そして、外力を計算する時に、$y$方向にのみ力を追加します。動摩擦力の計算のあとがいいようです。</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nx">forcey</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">mass</span><span class="o">*</span><span class="nx">g</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-javascript">    forcey += mass*g
+</code></pre>
+
+<p><a href="../yoyos">次: yoyos</a></p>
 </div>
 </div>
 </body>
