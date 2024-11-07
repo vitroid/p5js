@@ -5,8 +5,8 @@ Samples of [p5.js](https://p5js.org).
 ## この教材の使い方
 
 - このリポジトリに含まれる全ファイルを、[GitHub](https://github.com/vitroid/p5js)から Clone するか、Download して下さい。
-- VSCode をインストールして下さい。
-- VSCode を起動し、ウィンドウ左橋の Extensions アイコン![Extensions icon](https://github.com/vitroid/p5js/raw/main/icons/extension.tn.png?raw=true)を押して、![LiveServer icon](https://github.com/vitroid/p5js/raw/main/icons/liveserver.tn.png?raw=true) Live Server をインストールしてください。
+- ![VSCode icon](https://github.com/vitroid/p5js/raw/main/icons/vscode.tn.jpg?raw=true)[VSCode](https://code.visualstudio.com) をインストールして下さい。
+- VSCode を起動し、ウィンドウ左橋の Extensions アイコン![Extensions icon](https://github.com/vitroid/p5js/raw/main/icons/extension.tn.jpg?raw=true)を押して、![LiveServer icon](https://github.com/vitroid/p5js/raw/main/icons/liveserver.tn.jpg?raw=true) Live Server をインストールしてください。
 - VSCode の画面下端の「Go Live」を押すと、ブラウザ上でこのページが表示されます。あとはリンクをたどって、各プログラムを実行して下さい。
 - ソースコードを修正すると、ブラウザ上に即座に反映されます。思うぞんぶん改造して下さい。
 
@@ -23,16 +23,16 @@ Samples of [p5.js](https://p5js.org).
 
 - [follow-mouse]: マウスカーソルに固定された質点の運動
 - [yoyo]: マウスカーソルにバネでつながれた質点の運動
-    - [yoyo-friction]: マウスカーソルにバネでつながれた質点の運動 "摩擦あり"
-    - [yoyo-string]: マウスカーソルにひもでつながれた質点の運動 "摩擦なし"
-- [yoyos]: マウスカーソルにバネでつながれた2つの質点の運動 "エネルギーを表示"
+    - [yoyo-friction]: マウスカーソルにバネでつながれた質点の運動
+    - [yoyo-string]: マウスカーソルにひもでつながれた質点の運動
+- [yoyos]: マウスカーソルにバネでつながれた2つの質点の運動
 - [yoyo-chain]: 質点の数珠つなぎ
 - [gravity]: バネ相互作用の代わりに重力でひっぱられるヨーヨー
 - [gravity-box]: 飛び去らないように箱を追加
     - [antigravity]: 反重力ヨーヨー
-- [gravity-3body]: 三体運動 "エネルギーを表示"
-- [atomic]: 分子間力
-- [atomic-pbc]: 周期境界条件 "エネルギーを表示"
+- [gravity-3body]: 三体運動
+    - [atomic]: 分子間力
+- [atomic-pbc]: 周期境界条件
 - [atoms]: 多分子のシミュレーション
 - [atoms-3d]: 三次元多分子のシミュレーション
 - [atoms-md]: Lennard-Jones分子の分子動力学シミュレーション
