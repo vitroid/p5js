@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ja">
 
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../hilite.css">
         <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
@@ -15,15 +17,24 @@
     </head>
 
     <body>
-        <div class="main">
-            <div id="sketch-holder">
-                <!-- Our sketch will go here! -->
-            </div>
-            <div class="text"><ul>
-<li><a href="..">Index</a></li>
-<li><a href="https://github.com/vitroid/p5js/blob/main/polylliard/sketch.js">コード</a></li>
-<li>一つ前の<a href="../billiard">billiard</a>との<a href="diff.html">差分</a></li>
-</ul>
+        <div class="page">
+            <aside class="stage" aria-label="シミュレーション">
+                <div class="stage-chrome">
+                    <span class="live">live</span>
+                    <span>p5.js sketch</span>
+                </div>
+                <div id="sketch-holder">
+                    <!-- Our sketch will go here! -->
+                </div>
+            </aside>
+            <div class="text">
+<nav class="lesson-nav">
+<a href="..">Index</a>
+<a href="https://github.com/vitroid/p5js/blob/main/polylliard/sketch.js">コード</a>
+<a href="../billiard">前: billiard</a>
+<a href="diff.html">差分</a>
+</nav>
+
 <h1>Poly-lliard</h1>
 <p>2つの円盤が動くのがBi-lliardなら、たくさんの円盤が動くのは、Poly-lliardと呼べるでしょう。</p>
 <p><a href="../billiard">billiard</a>ではすでに円盤の位置と速度を配列に入れるようにしたので、3個以上の円盤が動くように拡張するのも簡単です。</p>
@@ -35,20 +46,22 @@
 <ol>
 <li>箱が小さくて窮屈なら、箱の大きさを変えましょう。以下の行で、ウィンドウの大きさを指定しています。</li>
 </ol>
-<pre class="codehilite"><code class="language-javascript">var canvas = createCanvas(141,100)
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">141</span><span class="p">,</span><span class="mf">100</span><span class="p">)</span>
+</code></pre></div>
 
 <ol>
 <li>箱を大きくできたら、円盤の数を増やしてみて下さい。箱に入りきらなかった場合は止まるようになっています。</li>
 </ol>
-<pre class="codehilite"><code class="language-javascript">const N=20
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">N</span><span class="o">=</span><span class="mf">20</span>
+</code></pre></div>
 
 <ol>
 <li>もうちょっとはやく動きを観察したい場合は、$dt$を大きくして下さい。</li>
 </ol>
 <p>最近のパソコンなら、100個ぐらいは楽勝で動きますが、それ以上数を増やすにはもっと洗練されたアルゴリズムが必要になります。</p>
-<p><a href="../realistic-billiard">次: realistic-billiard</a></p>
+<nav class="lesson-next">
+<a href="../realistic-billiard"><span><span class="next-label">Next</span><br><span class="next-title">realistic-billiard</span></span><span class="next-arrow">→</span></a>
+</nav>
 </div>
 </div>
 </body>

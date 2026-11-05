@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ja">
 
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../hilite.css">
         <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
@@ -15,20 +17,31 @@
     </head>
 
     <body>
-        <div class="main">
-            <div id="sketch-holder">
-                <!-- Our sketch will go here! -->
-            </div>
-            <div class="text"><ul>
-<li><a href="..">Index</a></li>
-<li><a href="https://github.com/vitroid/p5js/blob/main/gravity-box/sketch.js">コード</a></li>
-<li>一つ前の<a href="../gravity">gravity</a>との<a href="diff.html">差分</a></li>
-</ul>
+        <div class="page">
+            <aside class="stage" aria-label="シミュレーション">
+                <div class="stage-chrome">
+                    <span class="live">live</span>
+                    <span>p5.js sketch</span>
+                </div>
+                <div id="sketch-holder">
+                    <!-- Our sketch will go here! -->
+                </div>
+            </aside>
+            <div class="text">
+<nav class="lesson-nav">
+<a href="..">Index</a>
+<a href="https://github.com/vitroid/p5js/blob/main/gravity-box/sketch.js">コード</a>
+<a href="../gravity">前: gravity</a>
+<a href="diff.html">差分</a>
+</nav>
+
 <h1>Gravity in a box</h1>
 <p>いとも簡単に星が飛び去ってしまうのを防ぐために、壁にあたったら反射するようにします。</p>
 <p>時間$dt$ずつ粒子を進め、もし粒子が上の壁$(y=0)$を越えて、$y$座標が負になりそうになったら、負になる前に$y$方向の速度$v_y$の符号を反転させて向きを変えます。同じことを、4面すべてで行えば、物体は箱から出られません。(マウスポインタは出られます。)</p>
 <p>うまくマウスポインタを動かし、粒子の速度をゆっくりにできるでしょうか。バネと違い、距離と力の関係が直感的でないので、意外に苦労すると思います。</p>
-<p><a href="../antigravity">次: antigravity</a></p>
+<nav class="lesson-next">
+<a href="../antigravity"><span><span class="next-label">Next</span><br><span class="next-title">antigravity</span></span><span class="next-arrow">→</span></a>
+</nav>
 </div>
 </div>
 </body>

@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ja">
 
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../hilite.css">
         <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
@@ -15,15 +17,24 @@
     </head>
 
     <body>
-        <div class="main">
-            <div id="sketch-holder">
-                <!-- Our sketch will go here! -->
-            </div>
-            <div class="text"><ul>
-<li><a href="..">Index</a></li>
-<li><a href="https://github.com/vitroid/p5js/blob/main/gravity-3body/sketch.js">コード</a></li>
-<li>一つ前の<a href="../gravity">gravity</a>との<a href="diff.html">差分</a></li>
-</ul>
+        <div class="page">
+            <aside class="stage" aria-label="シミュレーション">
+                <div class="stage-chrome">
+                    <span class="live">live</span>
+                    <span>p5.js sketch</span>
+                </div>
+                <div id="sketch-holder">
+                    <!-- Our sketch will go here! -->
+                </div>
+            </aside>
+            <div class="text">
+<nav class="lesson-nav">
+<a href="..">Index</a>
+<a href="https://github.com/vitroid/p5js/blob/main/gravity-3body/sketch.js">コード</a>
+<a href="../gravity">前: gravity</a>
+<a href="diff.html">差分</a>
+</nav>
+
 <h1>Gravity between three bodies</h1>
 <p>三体の運動をシミュレーションしてみます。マウスポインタはウィンドウの中央付近にじっとさせておくのが良いでしょう。(それでも、安定な運動にはならず、いずれ月は飛び去ってしまいます)</p>
 <h2>多体相互作用</h2>
@@ -36,7 +47,9 @@
 <p>力学シミュレーションでは、本来微分方程式である速度と位置の関係式や加速度と速度の関係式を差分で近似しているため、エネルギー保存則は完全にはなりたちません。長時間シミュレーションを行っていると、徐々に全エネルギーが増えることはよくあります。</p>
 <p>これを避けるためには、$dt$を小さくし、差分を微分に近付けるのが良いのですが、それ以外に、計算順序をちょっと工夫して、一定の誤差は生じても誤差が蓄積しない(全エネルギーが一方的に増えつづけることはない)といううまいやりかたがあります。このプログラムでは、その計算順序を採用しています。[^1]</p>
 <p>[^1]: 吉田春夫、「シンプレクティック数値解法」、数理科学 384, 37 (1995).</p>
-<p><a href="../atomic">次: atomic</a></p>
+<nav class="lesson-next">
+<a href="../atomic"><span><span class="next-label">Next</span><br><span class="next-title">atomic</span></span><span class="next-arrow">→</span></a>
+</nav>
 </div>
 </div>
 </body>

@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ja">
 
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../hilite.css">
         <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
@@ -15,15 +17,24 @@
     </head>
 
     <body>
-        <div class="main">
-            <div id="sketch-holder">
-                <!-- Our sketch will go here! -->
-            </div>
-            <div class="text"><ul>
-<li><a href="..">Index</a></li>
-<li><a href="https://github.com/vitroid/p5js/blob/main/atomic/sketch.js">コード</a></li>
-<li>一つ前の<a href="../gravity-3body">gravity-3body</a>との<a href="diff.html">差分</a></li>
-</ul>
+        <div class="page">
+            <aside class="stage" aria-label="シミュレーション">
+                <div class="stage-chrome">
+                    <span class="live">live</span>
+                    <span>p5.js sketch</span>
+                </div>
+                <div id="sketch-holder">
+                    <!-- Our sketch will go here! -->
+                </div>
+            </aside>
+            <div class="text">
+<nav class="lesson-nav">
+<a href="..">Index</a>
+<a href="https://github.com/vitroid/p5js/blob/main/atomic/sketch.js">コード</a>
+<a href="../gravity-3body">前: gravity-3body</a>
+<a href="diff.html">差分</a>
+</nav>
+
 <h1>Atomic interaction</h1>
 <p>重力が分子間力に変わっても、計算の方法は同じです。ここでは、<a href="../gravity-3body">gravity-3body</a>の力の計算の部分を、典型的な分子間力であるLennard-Jones相互作用に書きかえます。</p>
 <h2>分子間力</h2>
@@ -48,7 +59,9 @@
 <p>という特徴があります。このため、Lennard-Jones相互作用のみが働く物質はほとんどが常温では気体です。(固体や液体になるためには、分子同士が強くひきあわなければならないが、温度が高いと運動エネルギーが大きいので引きあえない)</p>
 <p>うかつにマウスポインタを物体に近付けすぎると、強い反発力でかなたに飛びさってしまいます。また、物体同士が衝突する場合も、$dt$を十分小さくしておかないと、計算誤差のせいではじき飛んでしまいます。分子はかなり神経質ですね。</p>
 <p>[^1]: Daniela Damasceno, Euclides Mesquita,a and Nimal Rajapakse, DOI: 10.1590/1679-78254050, CC BY 4.0</p>
-<p><a href="../atomic-pbc">次: atomic-pbc</a></p>
+<nav class="lesson-next">
+<a href="../atomic-pbc"><span><span class="next-label">Next</span><br><span class="next-title">atomic-pbc</span></span><span class="next-arrow">→</span></a>
+</nav>
 </div>
 </div>
 </body>

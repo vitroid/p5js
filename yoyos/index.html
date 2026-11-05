@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ja">
 
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../hilite.css">
         <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
@@ -15,15 +17,24 @@
     </head>
 
     <body>
-        <div class="main">
-            <div id="sketch-holder">
-                <!-- Our sketch will go here! -->
-            </div>
-            <div class="text"><ul>
-<li><a href="..">Index</a></li>
-<li><a href="https://github.com/vitroid/p5js/blob/main/yoyos/sketch.js">コード</a></li>
-<li>一つ前の<a href="../yoyo">yoyo</a>との<a href="diff.html">差分</a></li>
-</ul>
+        <div class="page">
+            <aside class="stage" aria-label="シミュレーション">
+                <div class="stage-chrome">
+                    <span class="live">live</span>
+                    <span>p5.js sketch</span>
+                </div>
+                <div id="sketch-holder">
+                    <!-- Our sketch will go here! -->
+                </div>
+            </aside>
+            <div class="text">
+<nav class="lesson-nav">
+<a href="..">Index</a>
+<a href="https://github.com/vitroid/p5js/blob/main/yoyos/sketch.js">コード</a>
+<a href="../yoyo">前: yoyo</a>
+<a href="diff.html">差分</a>
+</nav>
+
 <h1>Yo-yos</h1>
 <p>ゴムでつながれた物体の先に、もうひとつ別の物体をつないでみます。</p>
 <p>1つ目の物体は、マウスポインタにも2番目の物体にもひっぱられる形になります。</p>
@@ -44,7 +55,9 @@
 <h2>試してみよう</h2>
 <p>グラフィック枠の左下に表示されているのは、現在の全エネルギーです。</p>
 <p>マウスをうまく操作し、どこまでエネルギーを低くできるか、挑戦して下さい。</p>
-<p><a href="../yoyo-chain">次: yoyo-chain</a></p>
+<nav class="lesson-next">
+<a href="../yoyo-chain"><span><span class="next-label">Next</span><br><span class="next-title">yoyo-chain</span></span><span class="next-arrow">→</span></a>
+</nav>
 </div>
 </div>
 </body>

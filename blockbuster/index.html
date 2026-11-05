@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ja">
 
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../hilite.css">
         <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
@@ -15,14 +17,22 @@
     </head>
 
     <body>
-        <div class="main">
-            <div id="sketch-holder">
-                <!-- Our sketch will go here! -->
-            </div>
-            <div class="text"><ul>
-<li><a href="..">Index</a></li>
-<li><a href="https://github.com/vitroid/p5js/blob/main/blockbuster/sketch.js">コード</a></li>
-</ul>
+        <div class="page">
+            <aside class="stage" aria-label="シミュレーション">
+                <div class="stage-chrome">
+                    <span class="live">live</span>
+                    <span>p5.js sketch</span>
+                </div>
+                <div id="sketch-holder">
+                    <!-- Our sketch will go here! -->
+                </div>
+            </aside>
+            <div class="text">
+<nav class="lesson-nav">
+<a href="..">Index</a>
+<a href="https://github.com/vitroid/p5js/blob/main/blockbuster/sketch.js">コード</a>
+</nav>
+
 <h1>Blockbuster</h1>
 <p>物体の運動のしかたを、コンピュータで再現する一番簡単な例として、剛体球の運動を表現してみましょう。</p>
 <p>剛体球とは、パチンコ玉やビリヤードの玉のように、硬い球のことです。</p>
@@ -44,14 +54,16 @@
 </ul>
 <h2>改造してみよう</h2>
 <p>円盤の動きがわかりやすいように、毎秒1コマずつ表示するようになっています。以下の部分を修正して毎秒30コマでなめらかに動くようにして下さい。</p>
-<pre class="codehilite"><code class="language-javascript">frameRate(1)
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">frameRate</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
+</code></pre></div>
 
 <p>動きが速すぎる場合は、$dt$の値を小さめにしましょう。</p>
-<pre class="codehilite"><code class="language-javascript">const dt = 10
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span>
+</code></pre></div>
 
-<p><a href="../airhockey">次: airhockey</a></p>
+<nav class="lesson-next">
+<a href="../airhockey"><span><span class="next-label">Next</span><br><span class="next-title">airhockey</span></span><span class="next-arrow">→</span></a>
+</nav>
 </div>
 </div>
 </body>

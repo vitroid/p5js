@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ja">
 
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../hilite.css">
         <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
@@ -15,15 +17,24 @@
     </head>
 
     <body>
-        <div class="main">
-            <div id="sketch-holder">
-                <!-- Our sketch will go here! -->
-            </div>
-            <div class="text"><ul>
-<li><a href="..">Index</a></li>
-<li><a href="https://github.com/vitroid/p5js/blob/main/yoyo-chain/sketch.js">コード</a></li>
-<li>一つ前の<a href="../yoyos">yoyos</a>との<a href="diff.html">差分</a></li>
-</ul>
+        <div class="page">
+            <aside class="stage" aria-label="シミュレーション">
+                <div class="stage-chrome">
+                    <span class="live">live</span>
+                    <span>p5.js sketch</span>
+                </div>
+                <div id="sketch-holder">
+                    <!-- Our sketch will go here! -->
+                </div>
+            </aside>
+            <div class="text">
+<nav class="lesson-nav">
+<a href="..">Index</a>
+<a href="https://github.com/vitroid/p5js/blob/main/yoyo-chain/sketch.js">コード</a>
+<a href="../yoyos">前: yoyos</a>
+<a href="diff.html">差分</a>
+</nav>
+
 <h1>Chained yo-yo</h1>
 <p>2個ができるなら、10個も簡単です。数珠つなぎにして長くのばしてみましょう。</p>
 <p>物体の個数と同じ数の運動方程式を書きならべるのはたいへんなので、座標や速度を配列に格納し、繰り返しを使ってまとめて計算します。</p>
@@ -34,7 +45,9 @@
 <li>全エネルギーを表示する。(<a href="../yoyos">Yoyos</a>を参考に)</li>
 <li>動摩擦力を追加し、おちつかせる。(<a href="../yoyo-friction">Yoyo-friction</a>を参考に)</li>
 </ul>
-<p><a href="../gravity">次: gravity</a></p>
+<nav class="lesson-next">
+<a href="../gravity"><span><span class="next-label">Next</span><br><span class="next-title">gravity</span></span><span class="next-arrow">→</span></a>
+</nav>
 </div>
 </div>
 </body>

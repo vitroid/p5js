@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ja">
 
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../hilite.css">
         <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
@@ -15,15 +17,24 @@
     </head>
 
     <body>
-        <div class="main">
-            <div id="sketch-holder">
-                <!-- Our sketch will go here! -->
-            </div>
-            <div class="text"><ul>
-<li><a href="..">Index</a></li>
-<li><a href="https://github.com/vitroid/p5js/blob/main/airhockey/sketch.js">コード</a></li>
-<li>一つ前の<a href="../blockbuster">blockbuster</a>との<a href="diff.html">差分</a></li>
-</ul>
+        <div class="page">
+            <aside class="stage" aria-label="シミュレーション">
+                <div class="stage-chrome">
+                    <span class="live">live</span>
+                    <span>p5.js sketch</span>
+                </div>
+                <div id="sketch-holder">
+                    <!-- Our sketch will go here! -->
+                </div>
+            </aside>
+            <div class="text">
+<nav class="lesson-nav">
+<a href="..">Index</a>
+<a href="https://github.com/vitroid/p5js/blob/main/airhockey/sketch.js">コード</a>
+<a href="../blockbuster">前: blockbuster</a>
+<a href="diff.html">差分</a>
+</nav>
+
 <h1>Air hockey</h1>
 <p>壁とぶつかるだけの運動は眠気をさそうので、ちょっとちょっかいをだしてみます。</p>
 <p>マウスポインタの位置にも、剛体円盤(パドル)を表示するようにしました。円盤同士が衝突する場合は、壁の場合よりも複雑な計算が必要になります。</p>
@@ -36,19 +47,21 @@
 <p>なお、パドルの速度は計算に入れていないので、マウスを動かしても、円盤の速度を変えることはできません。いつも完全弾性衝突しているので、速度は一定です。</p>
 <h2>改造してみよう</h2>
 <p>パドルの直径を2倍にしてみます。パドルの直径が円盤の直径の2倍になると、円盤とパドルの衝突は、円盤の半径の3倍の場所で起こります。上の式で言えば、$2r$の部分を$3r$に変更するだけです。プログラム内では、次の部分に書かれています。</p>
-<pre class="codehilite"><code class="language-javascript">        let C = dx**2 + dy**2 - (2*radius)**2
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dx</span><span class="o">**</span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">dy</span><span class="o">**</span><span class="mf">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mf">2</span><span class="o">*</span><span class="nx">radius</span><span class="p">)</span><span class="o">**</span><span class="mf">2</span>
+</code></pre></div>
 
 <p>衝突後の速度を計算する部分にも修正が必要です。</p>
-<pre class="codehilite"><code class="language-javascript">let dx = (px - x) / (2*radius)
-let dy = (py - y) / (2*radius)
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">px</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">2</span><span class="o">*</span><span class="nx">radius</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">py</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">2</span><span class="o">*</span><span class="nx">radius</span><span class="p">)</span>
+</code></pre></div>
 
 <p>パドルは以下の部分で表示しています。ここでも、倍のサイズで描くようにします。</p>
-<pre class="codehilite"><code class="language-javascript">    ellipse(px,py,radius*2,radius*2)
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nx">ellipse</span><span class="p">(</span><span class="nx">px</span><span class="p">,</span><span class="nx">py</span><span class="p">,</span><span class="nx">radius</span><span class="o">*</span><span class="mf">2</span><span class="p">,</span><span class="nx">radius</span><span class="o">*</span><span class="mf">2</span><span class="p">)</span>
+</code></pre></div>
 
-<p><a href="../billiard">次: billiard</a></p>
+<nav class="lesson-next">
+<a href="../billiard"><span><span class="next-label">Next</span><br><span class="next-title">billiard</span></span><span class="next-arrow">→</span></a>
+</nav>
 </div>
 </div>
 </body>
