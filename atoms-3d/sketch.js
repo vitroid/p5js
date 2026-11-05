@@ -5,15 +5,15 @@ const N = 60;
 const T = 50;
 const cell = [400, 400, 400];
 
-let x = Array(N);
-let y = Array(N);
-let z = Array(N);
-let vx = Array(N);
-let vy = Array(N);
-let vz = Array(N);
-let mass = Array(N);
+let x = new Array(N).fill(0);
+let y = new Array(N).fill(0);
+let z = new Array(N).fill(0);
+let vx = new Array(N).fill(0);
+let vy = new Array(N).fill(0);
+let vz = new Array(N).fill(0);
+let mass = new Array(N).fill(1);
 
-var cam;
+let cam;
 
 function arrange_atoms() {
   // 面心立方格子につめて配列する。
@@ -89,15 +89,12 @@ function draw() {
       z[i] += (vz[i] * dt) / 2;
     }
     // 力の計算
-    let fx = Array(N);
-    let fy = Array(N);
-    let fz = Array(N);
-    for (let i = 0; i < N; i++) {
-      fx[i] = fy[i] = fz[i] = 0;
-    }
+    let fx = new Array(N).fill(0);
+    let fy = new Array(N).fill(0);
+    let fz = new Array(N).fill(0);
     for (let i = 0; i < N; i++) {
       for (let j = 0; j < i; j++) {
-        f = force_LJ(x[i], y[i], z[i], x[j], y[j], z[j]);
+        let f = force_LJ(x[i], y[i], z[i], x[j], y[j], z[j]);
         fx[i] += f[0];
         fy[i] += f[1];
         fz[i] += f[2];
@@ -133,8 +130,8 @@ function draw() {
   epp.push(ep);
   ekk.push(ek);
   if (epp.length > width) {
-    epp.shift(0);
-    ekk.shift(0);
+    epp.shift();
+    ekk.shift();
   }
   // 温度制御
   if (ek / N > T) {

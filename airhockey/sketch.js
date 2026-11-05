@@ -9,7 +9,7 @@ let px;
 let py;
 
 function setup() {
-  var canvas = createCanvas(141, 100);
+  let canvas = createCanvas(141, 100);
   canvas.parent("sketch-holder");
   frameRate(30);
 }
@@ -28,8 +28,8 @@ function progress(dt, last) {
   if (dt <= 0) {
     return last;
   }
-  var collide = NOCOLL;
-  var t_coll = dt;
+  let collide = NOCOLL;
+  let t_coll = dt;
   // 左の壁
   // x + vx*dt == 0 の時に衝突。
   // dt = -x/vx

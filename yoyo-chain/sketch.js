@@ -1,32 +1,24 @@
 const N = 10;
 const dt = 0.1;
 
-var x = Array(N);
-var y = Array(N);
-var vx = Array(N);
-var vy = Array(N);
-var mass = Array(N);
-var k = Array(N);
+let x = new Array(N).fill(0);
+let y = new Array(N).fill(0);
+let vx = new Array(N).fill(0);
+let vy = new Array(N).fill(0);
+let mass = new Array(N).fill(0.3);
+let k = new Array(N).fill(1);
 
 function setup() {
-  var canvas = createCanvas(600, 600);
+  let canvas = createCanvas(600, 600);
   canvas.parent("sketch-holder");
   frameRate(30);
-  for (let i = 0; i < N; i++) {
-    x[i] = 0;
-    y[i] = 0;
-    vx[i] = 0;
-    vy[i] = 0;
-    mass[i] = 0.3;
-    k[i] = 1;
-  }
 }
 function draw() {
   // 力の計算
-  let forcex = Array(N);
-  let forcey = Array(N);
-  deltax = x[0] - mouseX;
-  deltay = y[0] - mouseY;
+  let forcex = new Array(N).fill(0);
+  let forcey = new Array(N).fill(0);
+  let deltax = x[0] - mouseX;
+  let deltay = y[0] - mouseY;
   forcex[0] = -deltax * k[0];
   forcey[0] = -deltay * k[0];
   for (let i = 1; i < N; i++) {

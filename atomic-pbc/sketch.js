@@ -11,13 +11,23 @@ let x2 = 50.0;
 let y2 = 300.0;
 let vx2 = 0;
 let vy2 = 0;
+let m_x = 300;
+let m_y = 300;
 
 function setup() {
   let canvas = createCanvas(600, 600);
   canvas.parent("sketch-holder");
   frameRate(30);
-  mouseX = 300;
-  mouseY = 300;
+}
+
+function mouseMoved() {
+  m_x = mouseX;
+  m_y = mouseY;
+}
+
+function mouseDragged() {
+  m_x = mouseX;
+  m_y = mouseY;
 }
 
 function force_LJ(x, y, x2, y2) {
@@ -67,10 +77,10 @@ function draw() {
     x2 = x2 + (vx2 * dt) / 2;
     y2 = y2 + (vy2 * dt) / 2;
     // 力の計算
-    let f = force_LJ(x, y, mouseX, mouseY);
+    let f = force_LJ(x, y, m_x, m_y);
     let fx01 = f[0];
     let fy01 = f[1];
-    f = force_LJ(x2, y2, mouseX, mouseY);
+    f = force_LJ(x2, y2, m_x, m_y);
     let fx02 = f[0];
     let fy02 = f[1];
     f = force_LJ(x2, y2, x, y);
@@ -112,16 +122,16 @@ function draw() {
   }
   // // エネルギー計算
   let ep =
-    energy_LJ(x, y, mouseX, mouseY) +
+    energy_LJ(x, y, m_x, m_y) +
     energy_LJ(x, y, x2, y2) +
-    energy_LJ(x2, y2, mouseX, mouseY);
+    energy_LJ(x2, y2, m_x, m_y);
   let ek =
     (mass * (vx * vx + vy * vy)) / 2 + (mass * (vx2 * vx2 + vy2 * vy2)) / 2;
   epp.push(ep);
   ekk.push(ek);
   if (epp.length > width) {
-    epp.shift(0);
-    ekk.shift(0);
+    epp.shift();
+    ekk.shift();
   }
   // 表示
   background(200);
@@ -154,8 +164,8 @@ function draw() {
     for (let cy = -1; cy <= 1; cy++) {
       push();
       translate(cx * width, cy * height);
-      let dx = mouseX - x;
-      let dy = mouseY - y;
+      let dx = m_x - x;
+      let dy = m_y - y;
       if (dx >= width / 2) {
         dx -= width;
       } else if (dx < -width / 2) {
@@ -167,8 +177,8 @@ function draw() {
         dy += height;
       }
       line(x, y, x + dx, y + dy);
-      dx = mouseX - x2;
-      dy = mouseY - y2;
+      dx = m_x - x2;
+      dy = m_y - y2;
       if (dx >= width / 2) {
         dx -= width;
       } else if (dx < -width / 2) {
@@ -193,7 +203,7 @@ function draw() {
         dy += height;
       }
       line(x, y, x + dx, y + dy);
-      ellipse(mouseX, mouseY, 50, 50);
+      ellipse(m_x, m_y, 50, 50);
       ellipse(x, y, 50, 50);
       ellipse(x2, y2, 50, 50);
       pop();

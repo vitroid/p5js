@@ -1,8 +1,8 @@
 const N = 6;
 const Etot = 8;
 const Ns = Etot + 1;
-var states = 0;
-var hist = new Array(10);
+let states = 0;
+let hist = new Array(10).fill(0);
 
 function show_state() {
   strokeWeight(10);
@@ -33,9 +33,6 @@ function setup() {
   let canvas = createCanvas(300, 300);
   canvas.parent("sketch-holder");
   frameRate(30);
-  for (let i = 0; i < 10; i++) {
-    hist[i] = 0;
-  }
 }
 
 function next() {
@@ -47,7 +44,6 @@ function next() {
     for (let i = 0; i < N; i++) {
       total += state[i] * 1;
     }
-    console.log(states, total);
   }
 }
 

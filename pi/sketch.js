@@ -1,6 +1,6 @@
 // 最初に一度だけ実行される部分
 function setup(){
-    var canvas = createCanvas(600,600)
+    let canvas = createCanvas(600,600)
     canvas.parent('sketch-holder')
     // 毎秒30枚描く
     frameRate(30)

@@ -27,7 +27,7 @@ const tableDepth = 290 * scale;
 const radius = 6.0 * scale;
 
 function setup() {
-  var canvas = createCanvas(tableWidth, tableDepth);
+  let canvas = createCanvas(tableWidth, tableDepth);
   canvas.parent("sketch-holder");
   frameRate(30);
 
@@ -39,7 +39,7 @@ function setup() {
   x.push(xcenter);
   y.push(tableDepth - ycenter);
   // 白玉の初速にわずかにノイズを加える
-  var r = Date.now() / 1000;
+  let r = Date.now() / 1000;
   r -= int(r);
   vx.push((r - 0.5) * 0.01 * scale);
   // vyは玉を突く速度。
@@ -71,8 +71,8 @@ const labels = ["", "", "LEFT", "RIGHT", "TOP", "BOTTOM"];
 // いろんな衝突のケースを考える必要がある。
 // 壁との衝突と、粒子同士の衝突を分ける。
 function wall(dt, x, y, vx, vy, last) {
-  var collide = NOCOLL;
-  var t_coll = dt;
+  let collide = NOCOLL;
+  let t_coll = dt;
   // 左の壁
   // x + vx*dt == 0 の時に衝突。
   // dt = -x/vx

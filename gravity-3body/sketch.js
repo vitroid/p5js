@@ -13,15 +13,25 @@ let y2 = 50.0;
 let vx2 = vx - 100;
 let vy2 = 0.0;
 
-var epp = [];
-var ekk = [];
+let epp = [];
+let ekk = [];
+let m_x = 300;
+let m_y = 300;
 
 function setup() {
-  var canvas = createCanvas(600, 600);
+  let canvas = createCanvas(600, 600);
   canvas.parent("sketch-holder");
   frameRate(30);
-  mouseX = 300;
-  mouseY = 300;
+}
+
+function mouseMoved() {
+  m_x = mouseX;
+  m_y = mouseY;
+}
+
+function mouseDragged() {
+  m_x = mouseX;
+  m_y = mouseY;
 }
 
 function draw() {
@@ -31,12 +41,12 @@ function draw() {
   x2 = x2 + (vx2 * dt) / 2;
   y2 = y2 + (vy2 * dt) / 2;
   // 力の計算
-  let deltax01 = x - mouseX;
-  let deltay01 = y - mouseY;
+  let deltax01 = x - m_x;
+  let deltay01 = y - m_y;
   let deltax12 = x2 - x;
   let deltay12 = y2 - y;
-  let deltax02 = x2 - mouseX;
-  let deltay02 = y2 - mouseY;
+  let deltax02 = x2 - m_x;
+  let deltay02 = y2 - m_y;
   let d01 = Math.sqrt(deltax01 ** 2 + deltay01 ** 2);
   let d12 = Math.sqrt(deltax12 ** 2 + deltay12 ** 2);
   let d02 = Math.sqrt(deltax02 ** 2 + deltay02 ** 2);
@@ -69,8 +79,8 @@ function draw() {
   epp.push(ep);
   ekk.push(ek);
   if (epp.length > width) {
-    epp.shift(0);
-    ekk.shift(0);
+    epp.shift();
+    ekk.shift();
   }
   // 表示
   background(200);
@@ -91,11 +101,11 @@ function draw() {
     ellipse(i, height / 2 - (epp[i] + ekk[i]) / 1000, 2, 2);
   }
   stroke(0);
-  line(x, y, mouseX, mouseY);
-  line(x2, y2, mouseX, mouseY);
+  line(x, y, m_x, m_y);
+  line(x2, y2, m_x, m_y);
   line(x, y, x2, y2);
   fill(255);
-  ellipse(mouseX, mouseY, 50, 50);
+  ellipse(m_x, m_y, 50, 50);
   ellipse(x, y, 50, 50);
   ellipse(x2, y2, 20, 20);
 }

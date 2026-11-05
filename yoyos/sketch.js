@@ -13,11 +13,11 @@ let y2 = 0.0;
 let vx2 = 0.0;
 let vy2 = 0.0;
 
-var eps = [];
-var eks = [];
+let eps = [];
+let eks = [];
 
 function setup() {
-  var canvas = createCanvas(600, 600);
+  let canvas = createCanvas(600, 600);
   canvas.parent("sketch-holder");
   frameRate(30);
 }
@@ -49,8 +49,8 @@ function draw() {
   eps.push(ep);
   eks.push(ek);
   if (eps.length > width) {
-    eps.shift(0);
-    eks.shift(0);
+    eps.shift();
+    eks.shift();
   }
   // 表示
   background(200);

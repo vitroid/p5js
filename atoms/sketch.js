@@ -4,11 +4,11 @@ const dt = 0.003;
 const N = 50;
 const T = 20;
 
-let x = Array(N);
-let y = Array(N);
-let vx = Array(N);
-let vy = Array(N);
-let mass = Array(N);
+let x = new Array(N).fill(0);
+let y = new Array(N).fill(0);
+let vx = new Array(N).fill(0);
+let vy = new Array(N).fill(0);
+let mass = new Array(N).fill(1);
 
 function arrange_atoms() {
   let X = 1;
@@ -85,14 +85,11 @@ function draw() {
       y[i] += (vy[i] * dt) / 2;
     }
     // 力の計算
-    let fx = Array(N);
-    let fy = Array(N);
-    for (let i = 0; i < N; i++) {
-      fx[i] = fy[i] = 0;
-    }
+    let fx = new Array(N).fill(0);
+    let fy = new Array(N).fill(0);
     for (let i = 0; i < N; i++) {
       for (let j = 0; j < i; j++) {
-        f = force_LJ(x[i], y[i], x[j], y[j]);
+        let f = force_LJ(x[i], y[i], x[j], y[j]);
         fx[i] += f[0];
         fy[i] += f[1];
         fx[j] -= f[0];
@@ -131,8 +128,8 @@ function draw() {
   epp.push(ep);
   ekk.push(ek);
   if (epp.length > width) {
-    epp.shift(0);
-    ekk.shift(0);
+    epp.shift();
+    ekk.shift();
   }
   // 温度制御
   if (ek / N > T) {

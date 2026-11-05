@@ -1,8 +1,9 @@
-var visual = true;
-var mdlj = new MDLJ(231, 363, 0.15, 200);
+let visual = true;
+let mdlj = new MDLJ(231, 363, 0.15, 200);
+let cam;
 
 function setup() {
-  var canvas = createCanvas(400, 400, WEBGL);
+  let canvas = createCanvas(400, 400, WEBGL);
   canvas.parent("sketch-holder");
   normalMaterial();
   cam = createCamera();

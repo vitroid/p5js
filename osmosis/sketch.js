@@ -8,7 +8,7 @@ const radius = 10.0;
 const N = 40;
 
 function setup() {
-  var canvas = createCanvas(300, 300);
+  let canvas = createCanvas(300, 300);
   canvas.parent("sketch-holder");
   frameRate(30);
   let row = 0;
@@ -47,8 +47,8 @@ const labels = ["", "", "LEFT", "RIGHT", "TOP", "BOTTOM", "MID"];
 // いろんな衝突のケースを考える必要がある。
 // 壁との衝突と、粒子同士の衝突を分ける。
 function wall(dt, x, y, vx, vy, last, kind) {
-  var collide = NOCOLL;
-  var t_coll = dt;
+  let collide = NOCOLL;
+  let t_coll = dt;
   // 左の壁
   // x + vx*dt == 0 の時に衝突。
   // dt = -x/vx
@@ -195,7 +195,6 @@ let last = [NOCOLL, NOCOLL];
 function draw() {
   const N = x.length;
   last = progress(dt, last);
-  console.log(last);
   // 表示
   background(200);
   stroke(0, 0, 255);

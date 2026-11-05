@@ -9,8 +9,10 @@ const radius = 10.0;
 const N = 20;
 let cell = [120, 120, 220];
 
+let cam;
+
 function setup() {
-  var canvas = createCanvas(400, 400, WEBGL);
+  let canvas = createCanvas(400, 400, WEBGL);
   canvas.parent("sketch-holder");
   frameRate(30);
   normalMaterial();
@@ -54,8 +56,8 @@ const labels = ["", "", "LEFT", "RIGHT", "TOP", "BOTTOM", "BACK", "FRONT"];
 // いろんな衝突のケースを考える必要がある。
 // 壁との衝突と、粒子同士の衝突を分ける。
 function wall(dt, x, y, z, vx, vy, vz, last) {
-  var collide = NOCOLL;
-  var t_coll = dt;
+  let collide = NOCOLL;
+  let t_coll = dt;
   // 左の壁
   // x + vx*dt == 0 の時に衝突。
   // dt = -x/vx
@@ -165,7 +167,6 @@ function progress(dt, last) {
       }
     }
   }
-  console.log(t_coll);
   // t_collには最初の衝突までの時間、collideには衝突相手の番号が入っている。
   // 衝突までの時間よりもdtのほうが小さい場合は、dtだけ進める。
   if (t_coll > dt) {
@@ -220,7 +221,6 @@ let last = [NOCOLL, NOCOLL];
 function draw() {
   const N = x.length;
   last = progress(dt, last);
-  console.log(last);
   // 表示
 
   background(200);

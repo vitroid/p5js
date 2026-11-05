@@ -1,7 +1,8 @@
-var mclj = new MCLJ(231, 3.63, 0.15, 300);
+let mclj = new MCLJ(231, 3.63, 0.15, 300);
+let cam;
 
 function setup() {
-  var canvas = createCanvas(400, 400, WEBGL);
+  let canvas = createCanvas(400, 400, WEBGL);
   canvas.parent("sketch-holder");
   background(200);
   noLoop();
@@ -16,7 +17,7 @@ function draw() {
   cam.lookAt(0, 0, 0);
   cam.setPosition(0, 0, 1000);
   setCamera(cam);
-  var cell = mclj.cell;
+  let cell = mclj.cell;
   scale(cell[0] * 20);
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);

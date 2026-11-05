@@ -222,8 +222,8 @@ class MDLJ {
     this.epp.push(this.ep);
     this.ekk.push(this.ek);
     if (this.epp.length > 60) {
-      this.epp.shift(0);
-      this.ekk.shift(0);
+      this.epp.shift();
+      this.ekk.shift();
     }
   }
 
@@ -258,7 +258,7 @@ class MDLJ {
       this.vz[i] -= dr[2];
     }
     // 温度制御
-    var ratio = this.ek > (3 / 2) * Ttarget * Rgas ? 0.99 : 1.01;
+    let ratio = this.ek > (3 / 2) * Ttarget * Rgas ? 0.99 : 1.01;
     for (let i = 0; i < this.N; i++) {
       this.vx[i] *= ratio;
       this.vy[i] *= ratio;

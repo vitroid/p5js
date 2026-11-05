@@ -3,16 +3,16 @@ const dt = 0.1;
 const N = 2;
 const T = 150;
 const gravity = 10;
-var cell;
+let cell;
 let aimx = 3;
 let aimy = 4;
 let shoot = 100;
 
-var fruits = [];
+let fruits = [];
 
 let safe_margin = 0.01;
 
-var cam;
+let cam;
 
 const fruit_types = [
   { radius: 10, mass: 10, rgb: [0.8, 0, 0] },
@@ -93,14 +93,14 @@ function draw() {
     // 1. 相互作用
     for (let i = 0; i < N; i++) {
       for (let j = 0; j < i; j++) {
-        f = force(
+        let f = force(
           fruits[i].position,
           fruits[j].position,
           fruit_types[fruits[i].type].radius +
             fruit_types[fruits[j].type].radius
         );
-        fruits[i].force.add(f);
-        fruits[j].force.sub(f);
+        fruits[i].force.add(f[0], f[1], f[2]);
+        fruits[j].force.sub(f[0], f[1], f[2]);
       }
     }
     // 2. 重力
@@ -259,7 +259,7 @@ function draw() {
   for (let i = 0; i < N; i++) {
     push();
     translate(fruits[i].position.x, fruits[i].position.y, fruits[i].position.z);
-    rgb = fruit_types[fruits[i].type].rgb;
+    let rgb = fruit_types[fruits[i].type].rgb;
     ambientMaterial(rgb[0], rgb[1], rgb[2]);
     sphere(fruit_types[fruits[i].type].radius);
     pop();
@@ -275,8 +275,7 @@ function draw() {
   noStroke();
   push();
   translate(aimx, aimy, cell.z / 2);
-  console.log(nexttype);
-  rgb = fruit_types[nexttype].rgb;
+  let rgb = fruit_types[nexttype].rgb;
   ambientMaterial(rgb[0], rgb[1], rgb[2]);
   // fill(rgb[0], rgb[1], rgb[2]);
   sphere(fruit_types[nexttype].radius);

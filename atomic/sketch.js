@@ -11,13 +11,23 @@ let x2 = 50.0;
 let y2 = 300.0;
 let vx2 = 0;
 let vy2 = 0;
+let m_x = 300;
+let m_y = 300;
 
 function setup() {
-  var canvas = createCanvas(600, 600);
+  let canvas = createCanvas(600, 600);
   canvas.parent("sketch-holder");
   frameRate(30);
-  mouseX = 300;
-  mouseY = 300;
+}
+
+function mouseMoved() {
+  m_x = mouseX;
+  m_y = mouseY;
+}
+
+function mouseDragged() {
+  m_x = mouseX;
+  m_y = mouseY;
 }
 
 function force_LJ(x, y, x2, y2) {
@@ -36,10 +46,10 @@ function draw() {
   x2 = x2 + (vx2 * dt) / 2;
   y2 = y2 + (vy2 * dt) / 2;
   // 力の計算
-  let f = force_LJ(x, y, mouseX, mouseY);
+  let f = force_LJ(x, y, m_x, m_y);
   let fx01 = f[0];
   let fy01 = f[1];
-  f = force_LJ(x2, y2, mouseX, mouseY);
+  f = force_LJ(x2, y2, m_x, m_y);
   let fx02 = f[0];
   let fy02 = f[1];
   f = force_LJ(x2, y2, x, y);
@@ -61,11 +71,11 @@ function draw() {
   // 表示
   background(200);
   stroke(0);
-  line(x, y, mouseX, mouseY);
-  line(x2, y2, mouseX, mouseY);
+  line(x, y, m_x, m_y);
+  line(x2, y2, m_x, m_y);
   line(x, y, x2, y2);
   fill(255);
-  ellipse(mouseX, mouseY, 50, 50);
+  ellipse(m_x, m_y, 50, 50);
   ellipse(x, y, 50, 50);
   ellipse(x2, y2, 50, 50);
 }

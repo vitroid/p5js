@@ -7,7 +7,7 @@ const radius = 30.0;
 const N = 30;
 
 function setup() {
-  var canvas = createCanvas(600, 600);
+  let canvas = createCanvas(600, 600);
   canvas.parent("sketch-holder");
   frameRate(30);
   let row = 0;
@@ -35,7 +35,7 @@ function setup() {
   }
 }
 
-var visual = true;
+let visual = true;
 const NOCOLL = -1;
 const LEFT = -2;
 const RIGHT = -3;
@@ -48,9 +48,9 @@ function mousePressed() {
   dt *= 2;
 }
 
-var statcount = 0;
-var histx = {};
-var histy = {};
+let statcount = 0;
+let histx = {};
+let histy = {};
 const NBIN = 40;
 
 function vstat() {
@@ -94,8 +94,8 @@ function vstat() {
 // いろんな衝突のケースを考える必要がある。
 // 壁との衝突と、粒子同士の衝突を分ける。
 function wall(dt, x, y, vx, vy, last) {
-  var collide = NOCOLL;
-  var t_coll = dt;
+  let collide = NOCOLL;
+  let t_coll = dt;
   // 左の壁
   // x + vx*dt == 0 の時に衝突。
   // dt = -x/vx
