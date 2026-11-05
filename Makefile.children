@@ -8,7 +8,7 @@ index.html: index.md ../header.html ../footer.html ../Makefile.children ../mdcom
 diff:
 	diff -yb ../$(PREV)/sketch.js sketch.js
 
-diff.html:
+diff.html: ../diff.py sketch.js
 	[ -e ../$(PREV)/sketch.js ] && python ../diff.py ../$(PREV)/sketch.js sketch.js > $@
 touch:
 	touch index.md

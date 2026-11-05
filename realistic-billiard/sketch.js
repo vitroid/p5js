@@ -2,8 +2,11 @@ let x = [];
 let y = [];
 let vx = [];
 let vy = [];
+// 毎秒30フレーム描画
 const dt = 1 / 30;
-const N = 10; //nine balls
+// ボールの数; 白玉を含め10個
+const N = 10;
+// ボールの色
 const colors = [
   "white",
   "yellow",
@@ -16,6 +19,7 @@ const colors = [
   "black",
   "red",
 ];
+// ボールの番号。枠に並べる順に。
 const ballLabels = ["", "1", "5", "6", "2", "9", "4", "7", "8", "3"];
 const scale = 2; // 2 pixel == 1 cm
 const tableWidth = 163 * scale;
@@ -34,10 +38,13 @@ function setup() {
   const ycenter = tableDepth / 4;
   x.push(xcenter);
   y.push(tableDepth - ycenter);
+  // 白玉の初速にわずかにノイズを加える
   var r = Date.now() / 1000;
   r -= int(r);
   vx.push((r - 0.5) * 0.01 * scale);
+  // vyは玉を突く速度。
   vy.push(-200 * scale); // pool shot speed 2 m/s
+  // 枠の中の球を配置。初速は0
   for (let row = -2; row <= 2; row++) {
     const ncol = 3 - abs(row);
     for (let col = 0; col < ncol; col++) {
@@ -207,10 +214,16 @@ function draw() {
     vy[i] *= 0.994;
   }
   // 表示
-  background(200);
+  background(0, 50, 0);
   textSize(15);
+  // 球の位置に影を描く
   for (let i = 0; i < N; i++) {
-    stroke(0);
+    fill(0);
+    ellipse(x[i] + 3, y[i] + 3, radius * 2, radius * 2);
+  }
+  // 球を描く
+  for (let i = 0; i < N; i++) {
+    stroke(128);
     fill(colors[i]);
     ellipse(x[i], y[i], radius * 2, radius * 2);
     // label

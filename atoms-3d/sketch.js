@@ -1,9 +1,9 @@
 const sig = 50;
 const eps = 100.0;
 const dt = 0.001;
-const N = 20;
-const T = 150;
-const cell = [200, 200, 300];
+const N = 60;
+const T = 50;
+const cell = [400, 400, 400];
 
 let x = Array(N);
 let y = Array(N);

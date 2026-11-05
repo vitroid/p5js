@@ -1,7 +1,7 @@
 const dt = 0.1;
 const mass = 0.3;
-const k = 10.0; // バネよりだいぶ硬い
-const d0 = 300; // ひもの長さ
+const k = 20.0; // バネよりだいぶ硬い
+const d0 = 100; // ひもの長さ
 const fm = 0.1; // 動摩擦による速度の減衰
 
 let x = 0.0;

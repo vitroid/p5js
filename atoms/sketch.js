@@ -1,8 +1,8 @@
 const sig = 50;
 const eps = 100.0;
 const dt = 0.003;
-const N = 20;
-const T = 50;
+const N = 50;
+const T = 20;
 
 let x = Array(N);
 let y = Array(N);

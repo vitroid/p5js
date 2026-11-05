@@ -1,3 +1,3 @@
-PREV=yoyos
+PREV=yoyo
 NEXT=gravity-box
 include ../Makefile.children

@@ -181,15 +181,18 @@ let last = [NOCOLL, NOCOLL];
 function draw() {
   const N = x.length;
   last = progress(dt, last);
-  console.log(last);
+
   // 表示
   background(200);
+  // 球のふちどり線
   stroke(0);
+  // 球の色
   fill(255);
   for (let i = 0; i < N; i++) {
     ellipse(x[i], y[i], radius * 2, radius * 2);
   }
 
+  // 文字の色
   fill(0);
   noStroke();
   let msg = "";
