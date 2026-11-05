@@ -153,12 +153,15 @@ function draw() {
   }
   stroke(0);
   push();
+  // 3x3のimage cellを描く
+  strokeWeight(5);
   scale(1 / 3);
   translate(width, height);
   line(0, -height, 0, height * 2);
   line(width, -height, width, height * 2);
   line(-width, 0, width * 2, 0);
   line(-width, height, width * 2, height);
+  strokeWeight(1);
   fill(255);
   for (let cx = -1; cx <= 1; cx++) {
     for (let cy = -1; cy <= 1; cy++) {

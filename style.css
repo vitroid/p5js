@@ -284,11 +284,11 @@ a:hover {
 .codehilite {
   margin: 0.85rem 0 1.25rem;
   padding: 0.95rem 1.05rem;
-  background: var(--code-bg) !important;
+  background: #f7faf4 !important;
   border-radius: var(--radius);
-  border: 1px solid #314039;
+  border: 1px solid var(--wash);
   overflow-x: auto;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .codehilite pre {
@@ -296,34 +296,13 @@ a:hover {
   font-family: var(--font-mono);
   font-size: 0.88rem;
   line-height: 1.55;
-  color: var(--code-ink);
+  color: var(--ink);
 }
 
 .codehilite code {
   font-family: inherit;
   background: transparent;
   color: inherit;
-}
-
-/* soften pygments colors on dark code panels */
-.codehilite .k,
-.codehilite .kd,
-.codehilite .kc {
-  color: #7dcea0;
-}
-.codehilite .s,
-.codehilite .s1,
-.codehilite .s2 {
-  color: #e8b86d;
-}
-.codehilite .m,
-.codehilite .mi,
-.codehilite .mf {
-  color: #9ec5e8;
-}
-.codehilite .c,
-.codehilite .c1 {
-  color: #7f9289;
 }
 
 .text code:not(.codehilite code) {

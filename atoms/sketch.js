@@ -2,7 +2,7 @@ const sig = 50;
 const eps = 100.0;
 const dt = 0.003;
 const N = 50;
-const T = 20;
+const T = 50;
 
 let x = new Array(N).fill(0);
 let y = new Array(N).fill(0);
