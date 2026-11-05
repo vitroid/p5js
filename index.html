@@ -7,7 +7,18 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="hilite.css">
         <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+          // ページ本文の日本語フォントに引きずられず、TeX (CM) 系で組む
+          "HTML-CSS": {
+            availableFonts: [],
+            preferredFont: null,
+            webFont: "TeX",
+            scale: 100
+          },
+          CommonHTML: { scale: 100 },
+          SVG: { font: "TeX", scale: 100 }
+        });
     </script>
         <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">

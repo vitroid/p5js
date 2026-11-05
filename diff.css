@@ -1,0 +1,220 @@
+/* diff.css — side-by-side deltas for lesson transitions */
+
+.diff-page {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.diff-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 3rem;
+}
+
+.diff-hero {
+  background: var(--paper);
+  border: 1px solid var(--paper-edge);
+  border-radius: calc(var(--radius) + 2px);
+  padding: 1.25rem 1.5rem 1.35rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 10px 30px rgba(28, 42, 38, 0.06);
+}
+
+.diff-back {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.diff-back:hover {
+  color: var(--teal);
+}
+
+.diff-kicker {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.diff-hero h1 {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+  line-height: 1.35;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem 0.65rem;
+}
+
+.diff-from {
+  color: var(--muted);
+}
+
+.diff-arrow {
+  font-family: var(--font-mono);
+  color: var(--amber);
+}
+
+.diff-to {
+  color: var(--ink);
+}
+
+.diff-lead {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 40rem;
+}
+
+.diff-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.diff-legend .swatch {
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-right: 0.35rem;
+  border-radius: 2px;
+  vertical-align: -0.1em;
+  border: 1px solid rgba(28, 42, 38, 0.12);
+}
+
+.diff-legend .swatch.add {
+  background: #c8e6c0;
+}
+
+.diff-legend .swatch.chg {
+  background: #f0d48a;
+}
+
+.diff-legend .swatch.sub {
+  background: #f0c0b8;
+}
+
+.diff-frame {
+  background: var(--stage);
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: var(--shadow-stage);
+  overflow: auto;
+  padding: 0.75rem;
+}
+
+/* —— difflib table —— */
+table.diff {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #d7e4dc;
+  background: transparent;
+}
+
+table.diff colgroup {
+  width: auto;
+}
+
+table.diff thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 0.55rem 0.75rem;
+  background: #1a2421;
+  color: #9ad7c8;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+table.diff td {
+  padding: 0.12rem 0.55rem;
+  vertical-align: top;
+  border: none;
+  white-space: pre;
+}
+
+td.diff_header {
+  width: 2.5rem;
+  text-align: right;
+  color: rgba(213, 224, 218, 0.35);
+  user-select: none;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.diff_next {
+  width: 1.1rem;
+  background: rgba(0, 0, 0, 0.22);
+  text-align: center;
+}
+
+.diff_next a {
+  color: rgba(154, 215, 200, 0.55);
+  text-decoration: none;
+  font-size: 0.7rem;
+}
+
+.diff_next a:hover {
+  color: #9ad7c8;
+}
+
+.diff_add {
+  background: rgba(61, 160, 100, 0.28);
+}
+
+.diff_chg {
+  background: rgba(184, 140, 40, 0.32);
+}
+
+.diff_sub {
+  background: rgba(180, 70, 60, 0.3);
+}
+
+span.diff_add,
+span.diff_chg,
+span.diff_sub {
+  border-radius: 2px;
+}
+
+span.diff_add {
+  background: rgba(90, 200, 130, 0.45);
+}
+
+span.diff_chg {
+  background: rgba(230, 180, 70, 0.5);
+}
+
+span.diff_sub {
+  background: rgba(230, 110, 95, 0.45);
+}
+
+/* hide difflib's built-in legends table */
+table.diff[summary="Legends"] {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .diff-shell {
+    padding: 0.85rem 0.85rem 2rem;
+  }
+
+  table.diff {
+    font-size: 0.7rem;
+  }
+}

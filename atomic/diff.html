@@ -1,71 +1,45 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Diff comparison</title>
-    <style>
-        :root {color-scheme: light dark}
-        table.diff {
-            font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-            border: medium;
-        }
-        .diff_header {
-            background-color: #e0e0e0;
-            font-weight: bold;
-        }
-        td.diff_header {
-            text-align: right;
-            padding: 0 8px;
-        }
-        .diff_next {
-            background-color: #c0c0c0;
-            padding: 4px 0;
-        }
-        .diff_add {background-color:palegreen}
-        .diff_chg {background-color:#ffff77}
-        .diff_sub {background-color:#ffaaaa}
-        table.diff[summary="Legends"] {
-            margin-top: 20px;
-            border: 1px solid #ccc;
-        }
-        table.diff[summary="Legends"] th {
-            background-color: #e0e0e0;
-            padding: 4px 8px;
-        }
-        table.diff[summary="Legends"] td {
-            padding: 4px 8px;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .diff_header {background-color:#666}
-            .diff_next {background-color:#393939}
-            .diff_add {background-color:darkgreen}
-            .diff_chg {background-color:#847415}
-            .diff_sub {background-color:darkred}
-            table.diff[summary="Legends"] {border-color:#555}
-            table.diff[summary="Legends"] th{background-color:#666}
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>gravity-3body → atomic</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../diff.css">
 </head>
+<body class="diff-page">
+  <div class="diff-shell">
+    <header class="diff-hero">
+      <a class="diff-back" href="./">← atomic</a>
+      <p class="diff-kicker">Code delta</p>
+      <h1>
+        <span class="diff-from">gravity-3body</span>
+        <span class="diff-arrow" aria-hidden="true">→</span>
+        <span class="diff-to">atomic</span>
+      </h1>
+      <p class="diff-lead">前のスケッチから、何行が足され・変わったかを見ます。変化のある付近だけを表示しています。</p>
+      <ul class="diff-legend" aria-label="凡例">
+        <li><span class="swatch add"></span>追加</li>
+        <li><span class="swatch chg"></span>変更</li>
+        <li><span class="swatch sub"></span>削除</li>
+      </ul>
+    </header>
+    <div class="diff-frame">
 
-<body>
-    
     <table class="diff" id="difflib_chg_to0__top"
            cellspacing="0" cellpadding="0" rules="groups" >
         <colgroup></colgroup> <colgroup></colgroup> <colgroup></colgroup>
         <colgroup></colgroup> <colgroup></colgroup> <colgroup></colgroup>
-        
+        <thead><tr><th class="diff_next"><br /></th><th colspan="2" class="diff_header">gravity-3body/sketch.js</th><th class="diff_next"><br /></th><th colspan="2" class="diff_header">atomic/sketch.js</th></tr></thead>
         <tbody>
             <tr><td class="diff_next" id="difflib_chg_to0__0"><a href="#difflib_chg_to0__1">n</a></td><td class="diff_header" id="from0_1">1</td><td class="diff_changed" nowrap="nowrap">const&nbsp;mass<span class="diff_sub">1</span>&nbsp;=&nbsp;50;</td><td class="diff_next"><a href="#difflib_chg_to0__1">n</a></td><td class="diff_header" id="to0_1">1</td><td class="diff_changed" nowrap="nowrap">const&nbsp;mass&nbsp;=&nbsp;50;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_2">2</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">const&nbsp;mass2&nbsp;=&nbsp;0.5;</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
-            <tr><td class="diff_next" id="difflib_chg_to0__1"></td><td class="diff_header" id="from0_3">3</td><td class="diff_changed" nowrap="nowrap">const&nbsp;<span class="diff_sub">ma</span>s<span class="diff_chg">s0</span>&nbsp;=&nbsp;50;</td><td class="diff_next"></td><td class="diff_header" id="to0_2">2</td><td class="diff_changed" nowrap="nowrap">const&nbsp;s<span class="diff_chg">ig</span>&nbsp;=&nbsp;50;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_3">3</td><td class="diff_changed" nowrap="nowrap">const&nbsp;<span class="diff_sub">ma</span>s<span class="diff_chg">s0</span>&nbsp;=&nbsp;50;</td><td class="diff_next"></td><td class="diff_header" id="to0_2">2</td><td class="diff_changed" nowrap="nowrap">const&nbsp;s<span class="diff_chg">ig</span>&nbsp;=&nbsp;50;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_4">4</td><td class="diff_changed" nowrap="nowrap">const&nbsp;<span class="diff_chg">G</span>&nbsp;=&nbsp;10000;</td><td class="diff_next"></td><td class="diff_header" id="to0_3">3</td><td class="diff_changed" nowrap="nowrap">const&nbsp;<span class="diff_chg">eps</span>&nbsp;=&nbsp;10000<span class="diff_add">0.0</span>;</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_5">5</td><td class="diff_changed" nowrap="nowrap">const&nbsp;dt&nbsp;=&nbsp;0.0<span class="diff_chg">2</span>;</td><td class="diff_next"></td><td class="diff_header" id="to0_4">4</td><td class="diff_changed" nowrap="nowrap">const&nbsp;dt&nbsp;=&nbsp;0.0<span class="diff_chg">1</span>;</td></tr>
-            <tr><td class="diff_next" id="difflib_chg_to0__2"></td><td class="diff_header" id="from0_6">6</td><td nowrap="nowrap"></td><td class="diff_next"></td><td class="diff_header" id="to0_5">5</td><td nowrap="nowrap"></td></tr>
+            <tr><td class="diff_next" id="difflib_chg_to0__1"></td><td class="diff_header" id="from0_5">5</td><td class="diff_changed" nowrap="nowrap">const&nbsp;dt&nbsp;=&nbsp;0.0<span class="diff_chg">2</span>;</td><td class="diff_next"></td><td class="diff_header" id="to0_4">4</td><td class="diff_changed" nowrap="nowrap">const&nbsp;dt&nbsp;=&nbsp;0.0<span class="diff_chg">1</span>;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_6">6</td><td nowrap="nowrap"></td><td class="diff_next"></td><td class="diff_header" id="to0_5">5</td><td nowrap="nowrap"></td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_7">7</td><td nowrap="nowrap">let&nbsp;x&nbsp;=&nbsp;300.0;</td><td class="diff_next"></td><td class="diff_header" id="to0_6">6</td><td nowrap="nowrap">let&nbsp;x&nbsp;=&nbsp;300.0;</td></tr>
-            <tr><td class="diff_next"><a href="#difflib_chg_to0__2">n</a></td><td class="diff_header" id="from0_8">8</td><td class="diff_changed" nowrap="nowrap">let&nbsp;y&nbsp;=&nbsp;<span class="diff_chg">0</span>0;</td><td class="diff_next"><a href="#difflib_chg_to0__2">n</a></td><td class="diff_header" id="to0_7">7</td><td class="diff_changed" nowrap="nowrap">let&nbsp;y&nbsp;=&nbsp;<span class="diff_chg">5</span>0;</td></tr>
+            <tr><td class="diff_next" id="difflib_chg_to0__2"><a href="#difflib_chg_to0__2">n</a></td><td class="diff_header" id="from0_8">8</td><td class="diff_changed" nowrap="nowrap">let&nbsp;y&nbsp;=&nbsp;<span class="diff_chg">0</span>0;</td><td class="diff_next"><a href="#difflib_chg_to0__2">n</a></td><td class="diff_header" id="to0_7">7</td><td class="diff_changed" nowrap="nowrap">let&nbsp;y&nbsp;=&nbsp;<span class="diff_chg">5</span>0;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_9">9</td><td class="diff_changed" nowrap="nowrap">let&nbsp;vx&nbsp;=&nbsp;<span class="diff_sub">4</span>0.0;</td><td class="diff_next"></td><td class="diff_header" id="to0_8">8</td><td class="diff_changed" nowrap="nowrap">let&nbsp;vx&nbsp;=&nbsp;0.0;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_10">10</td><td nowrap="nowrap">let&nbsp;vy&nbsp;=&nbsp;0.0;</td><td class="diff_next"></td><td class="diff_header" id="to0_9">9</td><td nowrap="nowrap">let&nbsp;vy&nbsp;=&nbsp;0.0;</td></tr>
             <tr><td class="diff_next"><a href="#difflib_chg_to0__3">n</a></td><td class="diff_header" id="from0_11">11</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">let&nbsp;x2&nbsp;=&nbsp;300.0;</span></td><td class="diff_next"><a href="#difflib_chg_to0__3">n</a></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
@@ -78,20 +52,9 @@
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_18">18</td><td nowrap="nowrap">let&nbsp;m_x&nbsp;=&nbsp;300;</td><td class="diff_next"></td><td class="diff_header" id="to0_14">14</td><td nowrap="nowrap">let&nbsp;m_x&nbsp;=&nbsp;300;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_19">19</td><td nowrap="nowrap">let&nbsp;m_y&nbsp;=&nbsp;300;</td><td class="diff_next"></td><td class="diff_header" id="to0_15">15</td><td nowrap="nowrap">let&nbsp;m_y&nbsp;=&nbsp;300;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_20">20</td><td nowrap="nowrap"></td><td class="diff_next"></td><td class="diff_header" id="to0_16">16</td><td nowrap="nowrap"></td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_21">21</td><td nowrap="nowrap">function&nbsp;setup()&nbsp;{</td><td class="diff_next"></td><td class="diff_header" id="to0_17">17</td><td nowrap="nowrap">function&nbsp;setup()&nbsp;{</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_22">22</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;canvas&nbsp;=&nbsp;createCanvas(600,&nbsp;600);</td><td class="diff_next"></td><td class="diff_header" id="to0_18">18</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;canvas&nbsp;=&nbsp;createCanvas(600,&nbsp;600);</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_23">23</td><td nowrap="nowrap">&nbsp;&nbsp;canvas.parent("sketch-holder");</td><td class="diff_next"></td><td class="diff_header" id="to0_19">19</td><td nowrap="nowrap">&nbsp;&nbsp;canvas.parent("sketch-holder");</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_24">24</td><td nowrap="nowrap">&nbsp;&nbsp;frameRate(30);</td><td class="diff_next"></td><td class="diff_header" id="to0_20">20</td><td nowrap="nowrap">&nbsp;&nbsp;frameRate(30);</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_25">25</td><td nowrap="nowrap">}</td><td class="diff_next"></td><td class="diff_header" id="to0_21">21</td><td nowrap="nowrap">}</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_26">26</td><td nowrap="nowrap"></td><td class="diff_next"></td><td class="diff_header" id="to0_22">22</td><td nowrap="nowrap"></td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_27">27</td><td nowrap="nowrap">function&nbsp;mouseMoved()&nbsp;{</td><td class="diff_next"></td><td class="diff_header" id="to0_23">23</td><td nowrap="nowrap">function&nbsp;mouseMoved()&nbsp;{</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_28">28</td><td nowrap="nowrap">&nbsp;&nbsp;m_x&nbsp;=&nbsp;mouseX;</td><td class="diff_next"></td><td class="diff_header" id="to0_24">24</td><td nowrap="nowrap">&nbsp;&nbsp;m_x&nbsp;=&nbsp;mouseX;</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_29">29</td><td nowrap="nowrap">&nbsp;&nbsp;m_y&nbsp;=&nbsp;mouseY;</td><td class="diff_next"></td><td class="diff_header" id="to0_25">25</td><td nowrap="nowrap">&nbsp;&nbsp;m_y&nbsp;=&nbsp;mouseY;</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_30">30</td><td nowrap="nowrap">}</td><td class="diff_next"></td><td class="diff_header" id="to0_26">26</td><td nowrap="nowrap">}</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_31">31</td><td nowrap="nowrap"></td><td class="diff_next"></td><td class="diff_header" id="to0_27">27</td><td nowrap="nowrap"></td></tr>
-            <tr><td class="diff_next" id="difflib_chg_to0__3"></td><td class="diff_header" id="from0_32">32</td><td nowrap="nowrap">function&nbsp;mouseDragged()&nbsp;{</td><td class="diff_next"></td><td class="diff_header" id="to0_28">28</td><td nowrap="nowrap">function&nbsp;mouseDragged()&nbsp;{</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_33">33</td><td nowrap="nowrap">&nbsp;&nbsp;m_x&nbsp;=&nbsp;mouseX;</td><td class="diff_next"></td><td class="diff_header" id="to0_29">29</td><td nowrap="nowrap">&nbsp;&nbsp;m_x&nbsp;=&nbsp;mouseX;</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_34">34</td><td nowrap="nowrap">&nbsp;&nbsp;m_y&nbsp;=&nbsp;mouseY;</td><td class="diff_next"></td><td class="diff_header" id="to0_30">30</td><td nowrap="nowrap">&nbsp;&nbsp;m_y&nbsp;=&nbsp;mouseY;</td></tr>
+        </tbody>        
+        <tbody>
+            <tr><td class="diff_next" id="difflib_chg_to0__3"></td><td class="diff_header" id="from0_34">34</td><td nowrap="nowrap">&nbsp;&nbsp;m_y&nbsp;=&nbsp;mouseY;</td><td class="diff_next"></td><td class="diff_header" id="to0_30">30</td><td nowrap="nowrap">&nbsp;&nbsp;m_y&nbsp;=&nbsp;mouseY;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_35">35</td><td nowrap="nowrap">}</td><td class="diff_next"></td><td class="diff_header" id="to0_31">31</td><td nowrap="nowrap">}</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_36">36</td><td nowrap="nowrap"></td><td class="diff_next"></td><td class="diff_header" id="to0_32">32</td><td nowrap="nowrap"></td></tr>
             <tr><td class="diff_next"><a href="#difflib_chg_to0__4">n</a></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td><td class="diff_next"><a href="#difflib_chg_to0__4">n</a></td><td class="diff_header" id="to0_33">33</td><td class="diff_changed" nowrap="nowrap"><span class="diff_add">function&nbsp;force_LJ(x,&nbsp;y,&nbsp;x2,&nbsp;y2)&nbsp;{</span></td></tr>
@@ -105,9 +68,10 @@
             <tr><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td><td class="diff_next"></td><td class="diff_header" id="to0_41">41</td><td class="diff_changed" nowrap="nowrap"><span class="diff_add">&nbsp;</span></td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_37">37</td><td nowrap="nowrap">function&nbsp;draw()&nbsp;{</td><td class="diff_next"></td><td class="diff_header" id="to0_42">42</td><td nowrap="nowrap">function&nbsp;draw()&nbsp;{</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_38">38</td><td nowrap="nowrap">&nbsp;&nbsp;//&nbsp;移動</td><td class="diff_next"></td><td class="diff_header" id="to0_43">43</td><td nowrap="nowrap">&nbsp;&nbsp;//&nbsp;移動</td></tr>
-            <tr><td class="diff_next" id="difflib_chg_to0__4"></td><td class="diff_header" id="from0_39">39</td><td nowrap="nowrap">&nbsp;&nbsp;x&nbsp;=&nbsp;x&nbsp;+&nbsp;(vx&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td><td class="diff_next"></td><td class="diff_header" id="to0_44">44</td><td nowrap="nowrap">&nbsp;&nbsp;x&nbsp;=&nbsp;x&nbsp;+&nbsp;(vx&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_40">40</td><td nowrap="nowrap">&nbsp;&nbsp;y&nbsp;=&nbsp;y&nbsp;+&nbsp;(vy&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td><td class="diff_next"></td><td class="diff_header" id="to0_45">45</td><td nowrap="nowrap">&nbsp;&nbsp;y&nbsp;=&nbsp;y&nbsp;+&nbsp;(vy&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_41">41</td><td nowrap="nowrap">&nbsp;&nbsp;x2&nbsp;=&nbsp;x2&nbsp;+&nbsp;(vx2&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td><td class="diff_next"></td><td class="diff_header" id="to0_46">46</td><td nowrap="nowrap">&nbsp;&nbsp;x2&nbsp;=&nbsp;x2&nbsp;+&nbsp;(vx2&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_39">39</td><td nowrap="nowrap">&nbsp;&nbsp;x&nbsp;=&nbsp;x&nbsp;+&nbsp;(vx&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td><td class="diff_next"></td><td class="diff_header" id="to0_44">44</td><td nowrap="nowrap">&nbsp;&nbsp;x&nbsp;=&nbsp;x&nbsp;+&nbsp;(vx&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td></tr>
+        </tbody>        
+        <tbody>
+            <tr><td class="diff_next" id="difflib_chg_to0__4"></td><td class="diff_header" id="from0_41">41</td><td nowrap="nowrap">&nbsp;&nbsp;x2&nbsp;=&nbsp;x2&nbsp;+&nbsp;(vx2&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td><td class="diff_next"></td><td class="diff_header" id="to0_46">46</td><td nowrap="nowrap">&nbsp;&nbsp;x2&nbsp;=&nbsp;x2&nbsp;+&nbsp;(vx2&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_42">42</td><td nowrap="nowrap">&nbsp;&nbsp;y2&nbsp;=&nbsp;y2&nbsp;+&nbsp;(vy2&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td><td class="diff_next"></td><td class="diff_header" id="to0_47">47</td><td nowrap="nowrap">&nbsp;&nbsp;y2&nbsp;=&nbsp;y2&nbsp;+&nbsp;(vy2&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_43">43</td><td nowrap="nowrap">&nbsp;&nbsp;//&nbsp;力の計算</td><td class="diff_next"></td><td class="diff_header" id="to0_48">48</td><td nowrap="nowrap">&nbsp;&nbsp;//&nbsp;力の計算</td></tr>
             <tr><td class="diff_next"><a href="#difflib_chg_to0__5">n</a></td><td class="diff_header" id="from0_44">44</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;let&nbsp;deltax01&nbsp;=&nbsp;x&nbsp;-&nbsp;m_x;</span></td><td class="diff_next"><a href="#difflib_chg_to0__5">n</a></td><td class="diff_header" id="to0_49">49</td><td class="diff_changed" nowrap="nowrap"><span class="diff_add">&nbsp;&nbsp;let&nbsp;f&nbsp;=&nbsp;force_LJ(x,&nbsp;y,&nbsp;m_x,&nbsp;m_y);</span></td></tr>
@@ -125,17 +89,17 @@
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_56">56</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;let&nbsp;fy12&nbsp;=&nbsp;(-G&nbsp;*&nbsp;mass1&nbsp;*&nbsp;mass2&nbsp;*&nbsp;deltay12)&nbsp;/&nbsp;d12&nbsp;**&nbsp;3;</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_57">57</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;let&nbsp;fx02&nbsp;=&nbsp;(-G&nbsp;*&nbsp;mass0&nbsp;*&nbsp;mass2&nbsp;*&nbsp;deltax02)&nbsp;/&nbsp;d02&nbsp;**&nbsp;3;</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_58">58</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;let&nbsp;fy02&nbsp;=&nbsp;(-G&nbsp;*&nbsp;mass0&nbsp;*&nbsp;mass2&nbsp;*&nbsp;deltay02)&nbsp;/&nbsp;d02&nbsp;**&nbsp;3;</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
-            <tr><td class="diff_next" id="difflib_chg_to0__5"></td><td class="diff_header" id="from0_59">59</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fx1&nbsp;=&nbsp;fx01&nbsp;-&nbsp;fx12;</td><td class="diff_next"></td><td class="diff_header" id="to0_58">58</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fx1&nbsp;=&nbsp;fx01&nbsp;-&nbsp;fx12;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_59">59</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fx1&nbsp;=&nbsp;fx01&nbsp;-&nbsp;fx12;</td><td class="diff_next"></td><td class="diff_header" id="to0_58">58</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fx1&nbsp;=&nbsp;fx01&nbsp;-&nbsp;fx12;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_60">60</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fy1&nbsp;=&nbsp;fy01&nbsp;-&nbsp;fy12;</td><td class="diff_next"></td><td class="diff_header" id="to0_59">59</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fy1&nbsp;=&nbsp;fy01&nbsp;-&nbsp;fy12;</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_61">61</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fx2&nbsp;=&nbsp;fx12&nbsp;+&nbsp;fx02;</td><td class="diff_next"></td><td class="diff_header" id="to0_60">60</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fx2&nbsp;=&nbsp;fx12&nbsp;+&nbsp;fx02;</td></tr>
+            <tr><td class="diff_next" id="difflib_chg_to0__5"></td><td class="diff_header" id="from0_61">61</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fx2&nbsp;=&nbsp;fx12&nbsp;+&nbsp;fx02;</td><td class="diff_next"></td><td class="diff_header" id="to0_60">60</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fx2&nbsp;=&nbsp;fx12&nbsp;+&nbsp;fx02;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_62">62</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fy2&nbsp;=&nbsp;fy12&nbsp;+&nbsp;fy02;</td><td class="diff_next"></td><td class="diff_header" id="to0_61">61</td><td nowrap="nowrap">&nbsp;&nbsp;let&nbsp;fy2&nbsp;=&nbsp;fy12&nbsp;+&nbsp;fy02;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_63">63</td><td nowrap="nowrap">&nbsp;&nbsp;//&nbsp;移動</td><td class="diff_next"></td><td class="diff_header" id="to0_62">62</td><td nowrap="nowrap">&nbsp;&nbsp;//&nbsp;移動</td></tr>
             <tr><td class="diff_next"><a href="#difflib_chg_to0__6">n</a></td><td class="diff_header" id="from0_64">64</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;vx&nbsp;=&nbsp;vx&nbsp;+&nbsp;(fx1&nbsp;/&nbsp;mass<span class="diff_sub">1</span>)&nbsp;*&nbsp;dt;</td><td class="diff_next"><a href="#difflib_chg_to0__6">n</a></td><td class="diff_header" id="to0_63">63</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;vx&nbsp;=&nbsp;vx&nbsp;+&nbsp;(fx1&nbsp;/&nbsp;mass)&nbsp;*&nbsp;dt;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_65">65</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;vy&nbsp;=&nbsp;vy&nbsp;+&nbsp;(fy1&nbsp;/&nbsp;mass<span class="diff_sub">1</span>)&nbsp;*&nbsp;dt;</td><td class="diff_next"></td><td class="diff_header" id="to0_64">64</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;vy&nbsp;=&nbsp;vy&nbsp;+&nbsp;(fy1&nbsp;/&nbsp;mass)&nbsp;*&nbsp;dt;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_66">66</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;vx2&nbsp;=&nbsp;vx2&nbsp;+&nbsp;(fx2&nbsp;/&nbsp;mass<span class="diff_sub">2</span>)&nbsp;*&nbsp;dt;</td><td class="diff_next"></td><td class="diff_header" id="to0_65">65</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;vx2&nbsp;=&nbsp;vx2&nbsp;+&nbsp;(fx2&nbsp;/&nbsp;mass)&nbsp;*&nbsp;dt;</td></tr>
-            <tr><td class="diff_next" id="difflib_chg_to0__6"></td><td class="diff_header" id="from0_67">67</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;vy2&nbsp;=&nbsp;vy2&nbsp;+&nbsp;(fy2&nbsp;/&nbsp;mass<span class="diff_sub">2</span>)&nbsp;*&nbsp;dt;</td><td class="diff_next"></td><td class="diff_header" id="to0_66">66</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;vy2&nbsp;=&nbsp;vy2&nbsp;+&nbsp;(fy2&nbsp;/&nbsp;mass)&nbsp;*&nbsp;dt;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_67">67</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;vy2&nbsp;=&nbsp;vy2&nbsp;+&nbsp;(fy2&nbsp;/&nbsp;mass<span class="diff_sub">2</span>)&nbsp;*&nbsp;dt;</td><td class="diff_next"></td><td class="diff_header" id="to0_66">66</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;vy2&nbsp;=&nbsp;vy2&nbsp;+&nbsp;(fy2&nbsp;/&nbsp;mass)&nbsp;*&nbsp;dt;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_68">68</td><td nowrap="nowrap">&nbsp;&nbsp;x&nbsp;=&nbsp;x&nbsp;+&nbsp;(vx&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td><td class="diff_next"></td><td class="diff_header" id="to0_67">67</td><td nowrap="nowrap">&nbsp;&nbsp;x&nbsp;=&nbsp;x&nbsp;+&nbsp;(vx&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_69">69</td><td nowrap="nowrap">&nbsp;&nbsp;y&nbsp;=&nbsp;y&nbsp;+&nbsp;(vy&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td><td class="diff_next"></td><td class="diff_header" id="to0_68">68</td><td nowrap="nowrap">&nbsp;&nbsp;y&nbsp;=&nbsp;y&nbsp;+&nbsp;(vy&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td></tr>
+            <tr><td class="diff_next" id="difflib_chg_to0__6"></td><td class="diff_header" id="from0_69">69</td><td nowrap="nowrap">&nbsp;&nbsp;y&nbsp;=&nbsp;y&nbsp;+&nbsp;(vy&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td><td class="diff_next"></td><td class="diff_header" id="to0_68">68</td><td nowrap="nowrap">&nbsp;&nbsp;y&nbsp;=&nbsp;y&nbsp;+&nbsp;(vy&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_70">70</td><td nowrap="nowrap">&nbsp;&nbsp;x2&nbsp;=&nbsp;x2&nbsp;+&nbsp;(vx2&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td><td class="diff_next"></td><td class="diff_header" id="to0_69">69</td><td nowrap="nowrap">&nbsp;&nbsp;x2&nbsp;=&nbsp;x2&nbsp;+&nbsp;(vx2&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_71">71</td><td nowrap="nowrap">&nbsp;&nbsp;y2&nbsp;=&nbsp;y2&nbsp;+&nbsp;(vy2&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td><td class="diff_next"></td><td class="diff_header" id="to0_70">70</td><td nowrap="nowrap">&nbsp;&nbsp;y2&nbsp;=&nbsp;y2&nbsp;+&nbsp;(vy2&nbsp;*&nbsp;dt)&nbsp;/&nbsp;2;</td></tr>
             <tr><td class="diff_next"><a href="#difflib_chg_to0__7">n</a></td><td class="diff_header" id="from0_72">72</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;//&nbsp;エネルギー計算</span></td><td class="diff_next"><a href="#difflib_chg_to0__7">n</a></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
@@ -148,9 +112,9 @@
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_79">79</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;epp.push(ep);</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_80">80</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;ekk.push(ek);</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_81">81</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;if&nbsp;(epp.length&nbsp;&gt;&nbsp;width)&nbsp;{</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
-            <tr><td class="diff_next" id="difflib_chg_to0__7"></td><td class="diff_header" id="from0_82">82</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;&nbsp;&nbsp;epp.shift();</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_82">82</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;&nbsp;&nbsp;epp.shift();</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_83">83</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;&nbsp;&nbsp;ekk.shift();</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_84">84</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;}</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
+            <tr><td class="diff_next" id="difflib_chg_to0__7"></td><td class="diff_header" id="from0_84">84</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;}</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_85">85</td><td nowrap="nowrap">&nbsp;&nbsp;//&nbsp;表示</td><td class="diff_next"></td><td class="diff_header" id="to0_71">71</td><td nowrap="nowrap">&nbsp;&nbsp;//&nbsp;表示</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_86">86</td><td nowrap="nowrap">&nbsp;&nbsp;background(200);</td><td class="diff_next"></td><td class="diff_header" id="to0_72">72</td><td nowrap="nowrap">&nbsp;&nbsp;background(200);</td></tr>
             <tr><td class="diff_next"><a href="#difflib_chg_to0__8">n</a></td><td class="diff_header" id="from0_87">87</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;//&nbsp;ポテンシャルエネルギーの表示</span></td><td class="diff_next"><a href="#difflib_chg_to0__8">n</a></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
@@ -171,30 +135,18 @@
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_102">102</td><td class="diff_changed" nowrap="nowrap"><span class="diff_sub">&nbsp;&nbsp;}</span></td><td class="diff_next"></td><td class="diff_header"></td><td class="diff_changed" nowrap="nowrap"></td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_103">103</td><td nowrap="nowrap">&nbsp;&nbsp;stroke(0);</td><td class="diff_next"></td><td class="diff_header" id="to0_73">73</td><td nowrap="nowrap">&nbsp;&nbsp;stroke(0);</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_104">104</td><td nowrap="nowrap">&nbsp;&nbsp;line(x,&nbsp;y,&nbsp;m_x,&nbsp;m_y);</td><td class="diff_next"></td><td class="diff_header" id="to0_74">74</td><td nowrap="nowrap">&nbsp;&nbsp;line(x,&nbsp;y,&nbsp;m_x,&nbsp;m_y);</td></tr>
-            <tr><td class="diff_next" id="difflib_chg_to0__8"></td><td class="diff_header" id="from0_105">105</td><td nowrap="nowrap">&nbsp;&nbsp;line(x2,&nbsp;y2,&nbsp;m_x,&nbsp;m_y);</td><td class="diff_next"></td><td class="diff_header" id="to0_75">75</td><td nowrap="nowrap">&nbsp;&nbsp;line(x2,&nbsp;y2,&nbsp;m_x,&nbsp;m_y);</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_106">106</td><td nowrap="nowrap">&nbsp;&nbsp;line(x,&nbsp;y,&nbsp;x2,&nbsp;y2);</td><td class="diff_next"></td><td class="diff_header" id="to0_76">76</td><td nowrap="nowrap">&nbsp;&nbsp;line(x,&nbsp;y,&nbsp;x2,&nbsp;y2);</td></tr>
-            <tr><td class="diff_next"></td><td class="diff_header" id="from0_107">107</td><td nowrap="nowrap">&nbsp;&nbsp;fill(255);</td><td class="diff_next"></td><td class="diff_header" id="to0_77">77</td><td nowrap="nowrap">&nbsp;&nbsp;fill(255);</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_105">105</td><td nowrap="nowrap">&nbsp;&nbsp;line(x2,&nbsp;y2,&nbsp;m_x,&nbsp;m_y);</td><td class="diff_next"></td><td class="diff_header" id="to0_75">75</td><td nowrap="nowrap">&nbsp;&nbsp;line(x2,&nbsp;y2,&nbsp;m_x,&nbsp;m_y);</td></tr>
+        </tbody>        
+        <tbody>
+            <tr><td class="diff_next" id="difflib_chg_to0__8"></td><td class="diff_header" id="from0_107">107</td><td nowrap="nowrap">&nbsp;&nbsp;fill(255);</td><td class="diff_next"></td><td class="diff_header" id="to0_77">77</td><td nowrap="nowrap">&nbsp;&nbsp;fill(255);</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_108">108</td><td nowrap="nowrap">&nbsp;&nbsp;ellipse(m_x,&nbsp;m_y,&nbsp;50,&nbsp;50);</td><td class="diff_next"></td><td class="diff_header" id="to0_78">78</td><td nowrap="nowrap">&nbsp;&nbsp;ellipse(m_x,&nbsp;m_y,&nbsp;50,&nbsp;50);</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_109">109</td><td nowrap="nowrap">&nbsp;&nbsp;ellipse(x,&nbsp;y,&nbsp;50,&nbsp;50);</td><td class="diff_next"></td><td class="diff_header" id="to0_79">79</td><td nowrap="nowrap">&nbsp;&nbsp;ellipse(x,&nbsp;y,&nbsp;50,&nbsp;50);</td></tr>
             <tr><td class="diff_next"><a href="#difflib_chg_to0__top">t</a></td><td class="diff_header" id="from0_110">110</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;ellipse(x2,&nbsp;y2,&nbsp;<span class="diff_chg">2</span>0,&nbsp;<span class="diff_chg">2</span>0);</td><td class="diff_next"><a href="#difflib_chg_to0__top">t</a></td><td class="diff_header" id="to0_80">80</td><td class="diff_changed" nowrap="nowrap">&nbsp;&nbsp;ellipse(x2,&nbsp;y2,&nbsp;<span class="diff_chg">5</span>0,&nbsp;<span class="diff_chg">5</span>0);</td></tr>
             <tr><td class="diff_next"></td><td class="diff_header" id="from0_111">111</td><td nowrap="nowrap">}</td><td class="diff_next"></td><td class="diff_header" id="to0_81">81</td><td nowrap="nowrap">}</td></tr>
         </tbody>
     </table>
-    <table class="diff" summary="Legends">
-        <tr> <th colspan="2"> Legends </th> </tr>
-        <tr> <td> <table border="" summary="Colors">
-                      <tr><th> Colors </th> </tr>
-                      <tr><td class="diff_add">&nbsp;Added&nbsp;</td></tr>
-                      <tr><td class="diff_chg">Changed</td> </tr>
-                      <tr><td class="diff_sub">Deleted</td> </tr>
-                  </table></td>
-             <td> <table border="" summary="Links">
-                      <tr><th colspan="2"> Links </th> </tr>
-                      <tr><td>(f)irst change</td> </tr>
-                      <tr><td>(n)ext change</td> </tr>
-                      <tr><td>(t)op</td> </tr>
-                  </table></td> </tr>
-    </table>
+    </div>
+  </div>
 </body>
-
 </html>
+

@@ -159,7 +159,9 @@ a:hover {
 #sketch-holder canvas {
   display: block;
   max-width: 100%;
-  height: auto;
+  width: auto;
+  /* canvas は height 属性が CSS にも効くため、幅だけ縮むと縦横比が壊れる */
+  height: auto !important;
   background: #c8c8c8;
   outline: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
@@ -402,6 +404,14 @@ img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
+}
+
+/* MathJax: 本文フォントを継承させず TeX (CM) ウェブフォントに任せる */
+.MathJax,
+.MathJax_Display,
+.MathJax_SVG,
+.MathJax_HTML-CSS {
+  font-family: MathJax_Main, MathJax_Math, MathJax_Size1, MathJax_Size2, MathJax_Size3, serif !important;
 }
 
 /* —— responsive —— */
